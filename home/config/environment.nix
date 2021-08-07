@@ -42,7 +42,7 @@
       nixos-update-config =
         "sudo cp -rf ~/documents/nix/latitude-7490/nixos/ /etc/";
       rm = "rm -f";
-      ssh = "sTERM=xterm-256color ssh";
+      ssh = "TERM=xterm-256color ssh";
       mkenv = ''
         cp ~/documents/nix/shells/shell.nix . ;
         echo "use_nix" >> .envrc ;
