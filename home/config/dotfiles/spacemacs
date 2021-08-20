@@ -40,7 +40,6 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
-     emacs-lisp
      ;; eww
      git
      helm
@@ -61,6 +60,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; latex
      csv
+     emacs-lisp spacemacs-misc
      go
      markdown
      ocaml
