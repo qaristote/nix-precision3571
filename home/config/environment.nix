@@ -7,8 +7,6 @@
       evince
       gimp
       gnupg
-      imagemagick
-      ghostscript
       keepassxc
       moreutils
       pavucontrol
