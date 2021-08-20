@@ -21,6 +21,7 @@
       # Fonts
       material-design-icons
       roboto
+      source-code-pro
     ] ++ [
       # Programming languages
       python3Minimal
