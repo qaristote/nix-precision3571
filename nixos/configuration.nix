@@ -28,7 +28,7 @@
     # '';
     autoOptimiseStore = true;
     gc = {
-      automatic = false;
+      automatic = true;
       dates = "weekly";
     };
   };
