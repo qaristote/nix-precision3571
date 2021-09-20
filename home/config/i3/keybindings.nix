@@ -44,6 +44,10 @@ in {
           "${modifier}+d" = ''exec "${rofi} -modi drun,run,window -show drun"'';
           "${modifier}+Shift+d" = "exec ${rofi} -show window";
         } else
-          { }));
+          { }) // (if config.services.emacs.client.enable then {
+            "${modifier}+Control+r" =
+              "exec systemctl --user restart emacs.service";
+          } else
+            { }));
   };
 }
