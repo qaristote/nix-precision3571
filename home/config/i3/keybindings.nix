@@ -34,20 +34,15 @@ in {
              $(( $(${brightnessctlKbd} max) - $(${brightnessctlKbd} get) ))
       '';
       "Print" = "exec xfce4-screenshooter";
-    } // (if backgroundImage != null then {
+    } // (lib.optionalAttrs (backgroundImage != null) {
       "${modifier}+l" = "exec ${lockscreen}/bin/lockscreen.sh";
-    } else
-      { }) // (if config.programs.alacritty.enable then {
-        "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
-      } else
-        { }) // (if config.programs.rofi.enable then {
-          "${modifier}+d" = ''exec "${rofi} -modi drun,run,window -show drun"'';
-          "${modifier}+Shift+d" = "exec ${rofi} -show window";
-        } else
-          { }) // (if config.services.emacs.client.enable then {
-            "${modifier}+Control+r" =
-              "exec systemctl --user restart emacs.service";
-          } else
-            { }));
+    }) // (lib.optionalAttrs config.programs.alacritty.enable {
+      "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
+    }) // (lib.optionalAttrs config.programs.rofi.enable {
+      "${modifier}+d" = ''exec "${rofi} -modi drun,run,window -show drun"'';
+      "${modifier}+Shift+d" = "exec ${rofi} -show window";
+    }) // (lib.optionalAttrs config.services.emacs.client.enable {
+      "${modifier}+Control+r" = "exec systemctl --user restart emacs.service";
+    }));
   };
 }

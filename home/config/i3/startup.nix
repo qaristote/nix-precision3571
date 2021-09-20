@@ -6,31 +6,17 @@ in {
     autostart = { command, always ? false, notification ? false }: {
       inherit command always notification;
     };
-  in (if (config.services.redshift.enable) then
-    [ (autostart { command = "systemctl --user start redshift"; }) ]
-  else
-    [ ]) ++ (if background-image != null then
-      [
-        (autostart {
-          command = "${pkgs.feh}/bin/feh --bg-scale ${background-image}";
-        })
-      ]
-    else
-      [ ]) ++ (if config.services.screen-locker.enable then
-        [
-          (autostart {
-            command =
-              "systemctl --user xidlehook.service";
-          })
-        ]
-      else
-        [ ]) ++ (if config.services.emacs.enable then
-          [ (autostart { command = "systemctl --user start emacs.service"; }) ]
-        else
-          [ ]) ++ [
-            # Launch frequently used apps
-            (autostart { command = "thunderbird"; })
-            (autostart { command = "signal-desktop"; })
-            (autostart { command = ''i3-msg "workspace 10; exec keepassxc"''; })
-          ];
+  in (lib.optional config.services.redshift.enable
+    (autostart { command = "systemctl --user start redshift"; }))
+++ (lib.optional (background-image != null) (autostart {
+    command = "${pkgs.feh}/bin/feh --bg-scale ${background-image}";
+  })) ++ (lib.optional config.services.xidlehook.enable
+    (autostart { command = "systemctl --user xidlehook.service"; }))
+  ++ (lib.optional config.services.emacs.enable
+    (autostart { command = "systemctl --user start emacs.service"; })) ++ [
+      # Launch frequently used apps
+      (autostart { command = "thunderbird"; })
+      (autostart { command = "signal-desktop"; })
+      (autostart { command = ''i3-msg "workspace 10; exec keepassxc"''; })
+    ];
 }
