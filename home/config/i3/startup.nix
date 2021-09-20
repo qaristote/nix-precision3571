@@ -20,7 +20,7 @@ in {
         [
           (autostart {
             command =
-              "systemctl --user start xautolock-session.service xss-lock.service";
+              "systemctl --user xidlehook.service";
           })
         ]
       else
