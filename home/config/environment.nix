@@ -32,13 +32,14 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = {
+    shellAliases = let nix-code-path = "~/code/nix";
+    in {
       amimullvad = "curl -Ls https://am.i.mullvad.net/connected";
-      nixos-update-config = "sudo cp -rf ~/code/nix/latitude-7490/nixos/ /etc/";
+      nixos-update-config = "sudo cp -rf ${nix-code-path}/latitude-7490/nixos/ /etc/";
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
-        cp ~/code/nix/shells/shell.nix . ;
+        cp ${nix-code-path}/shells/shell.nix . ;
         echo "use_nix" >> .envrc ;
         direnv allow ;
         $EDITOR shell.nix ;
