@@ -1,5 +1,18 @@
 { buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
   {
+    "add-custom-search-engine" = buildFirefoxXpiAddon {
+      pname = "add-custom-search-engine";
+      version = "4.2";
+      addonId = "{af37054b-3ace-46a2-ac59-709e4412bec6}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3812756/add_custom_search_engine-4.2-fx.xpi";
+      sha256 = "86aaf173514ec2da55556eb339a9d7c115c6e070c5433ebff8db31baa8e165d5";
+      meta = with lib;
+      {
+        description = "Add a custom search engine to the list of available search engines in the search bar and URL bar.";
+        license = licenses.mpl20;
+        platforms = platforms.all;
+        };
+      };
     "canvasblocker" = buildFirefoxXpiAddon {
       pname = "canvasblocker";
       version = "1.6.1";
@@ -44,10 +57,10 @@
       };
     "multi-account-containers" = buildFirefoxXpiAddon {
       pname = "multi-account-containers";
-      version = "7.3.0";
+      version = "7.4.0";
       addonId = "@testpilot-containers";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3713375/firefox_multi_account_containers-7.3.0-fx.xpi";
-      sha256 = "4784cbd5de44d65f4cc014949dcbd315503f4913dfa7b3124b8d84c49515666a";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3821991/firefox_multi_account_containers-7.4.0-fx.xpi";
+      sha256 = "75c15ec1b76f5bb77da99f401119ae38e0387cf85a1980e1245700a2995ab1eb";
       meta = with lib;
       {
         homepage = "https://github.com/mozilla/multi-account-containers/#readme";
@@ -113,10 +126,10 @@
       };
     "tree-style-tab" = buildFirefoxXpiAddon {
       pname = "tree-style-tab";
-      version = "3.8.7";
+      version = "3.8.12";
       addonId = "treestyletab@piro.sakura.ne.jp";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3807070/tree_style_tab_-3.8.7-fx.xpi";
-      sha256 = "791e89cf720b0b7cc33a5b1fe6c1552490958b06e4ac0a456805fdbb3975b49c";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3830576/tree_style_tab-3.8.12-fx.xpi";
+      sha256 = "9f2776638b073a3ad986851126c53a561e15b7532f3a1c646b428b61bd74aab4";
       meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
@@ -126,10 +139,10 @@
       };
     "ublock-origin" = buildFirefoxXpiAddon {
       pname = "ublock-origin";
-      version = "1.36.2";
+      version = "1.37.2";
       addonId = "uBlock0@raymondhill.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3806442/ublock_origin-1.36.2-an+fx.xpi";
-      sha256 = "31f8c2126a3f4e3cfe3ef63550b842a5d4f071ec1c6e5aa377c2f29b11ff1415";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3816867/ublock_origin-1.37.2-an+fx.xpi";
+      sha256 = "b3a3c81891acb4620e33dd548b50375aad826376044a6143b5a947d0406a559e";
       meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
@@ -140,13 +153,13 @@
       };
     "unpaywall" = buildFirefoxXpiAddon {
       pname = "unpaywall";
-      version = "3.96";
+      version = "3.98";
       addonId = "{f209234a-76f0-4735-9920-eb62507a54cd}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3806465/unpaywall-3.96-fx.xpi";
-      sha256 = "fa19409ca9feab9121e39d01bb46fc658abcaded172adb5900a2b52c60bc9f65";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3816853/unpaywall-3.98-fx.xpi";
+      sha256 = "6893bea86d3c4ed7f1100bf0e173591b526a062f4ddd7be13c30a54573c797fb";
       meta = with lib;
       {
-        homepage = "http://unpaywall.org/products/extension";
+        homepage = "https://unpaywall.org/products/extension";
         description = "Get free text of research papers as you browse, using Unpaywall's index of ten million legal, open-access articles.";
         license = licenses.mit;
         platforms = platforms.all;
