@@ -34,12 +34,11 @@
     enable = true;
     shellAliases = {
       amimullvad = "curl -Ls https://am.i.mullvad.net/connected";
-      nixos-update-config =
-        "sudo cp -rf ~/documents/nix/latitude-7490/nixos/ /etc/";
+      nixos-update-config = "sudo cp -rf ~/code/nix/latitude-7490/nixos/ /etc/";
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
-        cp ~/documents/nix/shells/shell.nix . ;
+        cp ~/code/nix/shells/shell.nix . ;
         echo "use_nix" >> .envrc ;
         direnv allow ;
         $EDITOR shell.nix ;
