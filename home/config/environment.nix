@@ -8,6 +8,7 @@
       gimp
       gnupg
       keepassxc
+      coreutils
       moreutils
       pavucontrol
       transmission-gtk
