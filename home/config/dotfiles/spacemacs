@@ -63,7 +63,7 @@ This function should only modify configuration layer settings."
      emacs-lisp spacemacs-misc
      go
      markdown
-     ocaml
+     ocaml coq
      python
      ;; ----------------------------------------------------------------
      ;; Private layers
