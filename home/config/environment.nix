@@ -24,13 +24,8 @@
       source-code-pro
     ] ++ [
       # Programming languages
-      python3Minimal
-    ] ++ (with texlive;
-      [
-        # Tex
-        # Uncomment when full disk available
-        # combined.scheme-full
-      ]);
+      python3Full
+    ];
 
   home.wallpaper = ./dotfiles/background-image;
 
@@ -64,4 +59,6 @@
   };
 
   services.gpg-agent.enable = true;
+
+  home.file.".config/latexmkrc".source = ./dotfiles/latexmkrc;
 }
