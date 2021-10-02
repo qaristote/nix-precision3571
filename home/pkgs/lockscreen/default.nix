@@ -1,4 +1,4 @@
-{ pkgs, backgroundImage ? null, resolution ? "1920x1080" }:
+{ lib, pkgs, backgroundImage ? null, resolution ? "1920x1080" }:
 
 let useBackgroundImage = backgroundImage != null;
 in pkgs.runCommand "lockscreen" { envVariable = true; } (''
