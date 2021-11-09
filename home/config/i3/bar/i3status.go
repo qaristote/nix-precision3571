@@ -221,7 +221,7 @@ func main() {
 	microphoneOffIcon := pango.Icon("mdi-microphone-off")
 	microphoneIcon := pango.Icon("mdi-microphone")
 	barista.Add(volume.New(pulseaudio.DefaultSource()).Output(func(v volume.Volume) bar.Output {
-		volume := v.Pct() / 10 // TODO: correct Pct implementation for sources
+		volume := v.Pct() // the value returned by the pulseaudio may be weird
 		var icon *pango.Node
 		if volume == 0 || v.Mute {
 			icon = microphoneOffIcon
