@@ -1,1 +1,1 @@
-$clean_ext = 'bbl nav run.xml snm vrb'
+$clean_ext = 'bbl nav prv_%R.fmt prv_%R.log prv/*/* prv/* prv run.xml snm vrb'
