@@ -43,10 +43,10 @@
       };
     "darkreader" = buildFirefoxXpiAddon {
       pname = "darkreader";
-      version = "4.9.34";
+      version = "4.9.39";
       addonId = "addon@darkreader.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3806938/dark_reader-4.9.34-an+fx.xpi";
-      sha256 = "9ba482118d25675af31ee403c740972a106fdccfd117c4449c046b70f1a2d95d";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3847766/dark_reader-4.9.39-an+fx.xpi";
+      sha256 = "570728350a0ada6dff2077512fbe14348ba8c841489320f5a4f57d5525a59454";
       meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -119,17 +119,17 @@
       meta = with lib;
       {
         homepage = "https://github.com/stoically/temporary-containers";
-        description = "Open tabs, websites, and links in automatically managed disposable containers. Containers isolate data websites store (cookies, storage, and more) from each other, enhancing your privacy and security while you browse.";
+        description = "Open tabs, websites, and links in automatically managed disposable containers which isolate the data websites store (cookies, storage, and more) from each other, enhancing your privacy and security while you browse.";
         license = licenses.mit;
         platforms = platforms.all;
         };
       };
     "tree-style-tab" = buildFirefoxXpiAddon {
       pname = "tree-style-tab";
-      version = "3.8.12";
+      version = "3.8.14";
       addonId = "treestyletab@piro.sakura.ne.jp";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3830576/tree_style_tab-3.8.12-fx.xpi";
-      sha256 = "9f2776638b073a3ad986851126c53a561e15b7532f3a1c646b428b61bd74aab4";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3854020/tree_style_tab-3.8.14-fx.xpi";
+      sha256 = "263459c562099dfe2640b8e5b598c68d8f610c07bab7cdd545b903fd1dc71133";
       meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
@@ -139,10 +139,10 @@
       };
     "ublock-origin" = buildFirefoxXpiAddon {
       pname = "ublock-origin";
-      version = "1.37.2";
+      version = "1.38.6";
       addonId = "uBlock0@raymondhill.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3816867/ublock_origin-1.37.2-an+fx.xpi";
-      sha256 = "b3a3c81891acb4620e33dd548b50375aad826376044a6143b5a947d0406a559e";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3853583/ublock_origin-1.38.6-an+fx.xpi";
+      sha256 = "d095ce1d57e5b46d1de55f6f57d239630ec6259434449f45d7163d69f5c0cc85";
       meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

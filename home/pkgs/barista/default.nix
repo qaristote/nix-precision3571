@@ -6,16 +6,11 @@ let useDefaultConfig = i3statusGo == null;
 in buildGoModule rec {
   name = "barista";
 
-  # src = fetchGit {
-  #   url = ./src;
-  #   rev = "2aa886091e455b2e213dd46d5405db0913759b03";
-  # };
-
   src = fetchFromGitHub {
     owner = "soumya92";
     repo = "barista";
-    rev = "82ee7b7bf4b928111af376e498458336b320b3b1";
-    sha256 = "0f0igsci7i0chjrw01fhmsv24nk4s5rxmk31j6z9yq8l216wz67g";
+    rev = "c8725f1d8765e36869eb54272f29c770ce1f2f67";
+    sha256 = "19nvwrr8baf8k0pp7ph07hmjcrxm7kv5j4f2rsfa8m7hgcyarjp4";
   };
 
   patchPhase = ''
@@ -35,6 +30,6 @@ in buildGoModule rec {
 
   subPackages = [ "main/i3status.go" ];
 
-  vendorSha256 = "1agvkrs2az65ldmlhwajxym36w14jnv9lyri413cw43iazhiv7r7";
+  vendorSha256 = "1q8bmgv7aac29yvpvgh6hi4c33ydj7f54l7xn7jg2sjbac4f8kbk";
 }
 
