@@ -65,10 +65,12 @@ This function should only modify configuration layer settings."
      markdown
      ocaml coq
      python
+     rust
      ;; ----------------------------------------------------------------
      ;; Private layers
      ;; ----------------------------------------------------------------
      direnv
+     bibli-paris
    )
 
    ;; List of additional packages that will be installed without being wrapped
@@ -556,12 +558,14 @@ before packages are loaded."
    '(merlin-command "ocamlmerlin"))
   (global-company-mode t)
   ;; Key bindings
-  (spacemacs/set-leader-keys-for-major-mode 'nix-mode "=" 'nix-format-buffer)
   (defun my-ediff-dotfile-and-template ()
     (interactive)
     (ediff-files "~/code/nix/latitude-7490/home/config/dotfiles/spacemacs"
                  (concat dotspacemacs-template-directory ".spacemacs.template")))
-  (spacemacs/set-leader-keys "feD" 'my-ediff-dotfile-and-template))
+  (spacemacs/set-leader-keys "feD" 'my-ediff-dotfile-and-template)
+  ;; ;; Other
+  ;; (require 'bibli-paris)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
