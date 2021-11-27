@@ -15,10 +15,10 @@
       };
     "canvasblocker" = buildFirefoxXpiAddon {
       pname = "canvasblocker";
-      version = "1.6.1";
+      version = "1.7";
       addonId = "CanvasBlocker@kkapsner.de";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3799708/canvasblocker-1.6.1-an+fx.xpi";
-      sha256 = "4db930c2100d3a01c001f60a7a168f41ec4a6374da6a55e2ae3b37aa37df8967";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3864535/canvasblocker-1.7-an+fx.xpi";
+      sha256 = "770caeb39e93ec332946473c183de6a9f8746ac4c9d6527dc4c14d1089b23d60";
       meta = with lib;
       {
         homepage = "https://github.com/kkapsner/CanvasBlocker/";
@@ -43,10 +43,10 @@
       };
     "darkreader" = buildFirefoxXpiAddon {
       pname = "darkreader";
-      version = "4.9.39";
+      version = "4.9.42";
       addonId = "addon@darkreader.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3847766/dark_reader-4.9.39-an+fx.xpi";
-      sha256 = "570728350a0ada6dff2077512fbe14348ba8c841489320f5a4f57d5525a59454";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3864423/dark_reader-4.9.42-an+fx.xpi";
+      sha256 = "592885b9a7b568d055207eb52bef3e13aa75c1015a98a19b4e6ecd79c2725403";
       meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -57,10 +57,10 @@
       };
     "multi-account-containers" = buildFirefoxXpiAddon {
       pname = "multi-account-containers";
-      version = "7.4.0";
+      version = "8.0.1";
       addonId = "@testpilot-containers";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3821991/firefox_multi_account_containers-7.4.0-fx.xpi";
-      sha256 = "75c15ec1b76f5bb77da99f401119ae38e0387cf85a1980e1245700a2995ab1eb";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3862036/firefox_multi_account_containers-8.0.1-fx.xpi";
+      sha256 = "00b710bd0825d008d5536d0672c639551c313c9b2fbca41c835b3a952024b42a";
       meta = with lib;
       {
         homepage = "https://github.com/mozilla/multi-account-containers/#readme";
@@ -126,10 +126,10 @@
       };
     "tree-style-tab" = buildFirefoxXpiAddon {
       pname = "tree-style-tab";
-      version = "3.8.14";
+      version = "3.8.16";
       addonId = "treestyletab@piro.sakura.ne.jp";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3854020/tree_style_tab-3.8.14-fx.xpi";
-      sha256 = "263459c562099dfe2640b8e5b598c68d8f610c07bab7cdd545b903fd1dc71133";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3866562/tree_style_tab-3.8.16-fx.xpi";
+      sha256 = "9cf29fdd9ed11f7fa43c0bf094a5fbf599c69c4568017478f1f57a934f30d18b";
       meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
