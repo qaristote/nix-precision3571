@@ -556,16 +556,19 @@ before packages are loaded."
   ;; Variables customization
   (custom-set-variables
    '(merlin-command "ocamlmerlin"))
+
   (global-company-mode t)
+
+
   ;; Key bindings
   (defun my-ediff-dotfile-and-template ()
     (interactive)
     (ediff-files "~/code/nix/latitude-7490/home/config/dotfiles/spacemacs"
                  (concat dotspacemacs-template-directory ".spacemacs.template")))
   (spacemacs/set-leader-keys "feD" 'my-ediff-dotfile-and-template)
-  ;; ;; Other
-  ;; (require 'bibli-paris)
-  )
+
+  (spacemacs/set-leader-keys-for-major-mode 'magit-mode "b" 'magit-branch)
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
