@@ -35,7 +35,8 @@
     shellAliases = let nix-code-path = "~/code/nix";
     in {
       amimullvad = "curl -Ls https://am.i.mullvad.net/connected";
-      nixos-update-config = "sudo cp -rf ${nix-code-path}/latitude-7490/nixos/ /etc/";
+      nixos-update-config =
+        "sudo cp -rf ${nix-code-path}/latitude-7490/nixos/ /etc/";
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
@@ -59,7 +60,10 @@
     nix-direnv.enable = true;
   };
 
-  services.gpg-agent.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+  };
 
   home.file.".config/latexmkrc".source = ./dotfiles/latexmkrc;
 }
