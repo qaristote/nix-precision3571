@@ -32,7 +32,9 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = let nix-code-path = "~/code/nix";
+    shellAliases = let
+      nix-code-path = "~/code/nix";
+      venv-manager-path = "~/.config/venv-manager";
     in {
       amimullvad = "curl -Ls https://am.i.mullvad.net/connected";
       nixos-update-config =
@@ -40,7 +42,7 @@
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
-        cp ${nix-code-path}/shells/shell.nix . ;
+        cp ${venv-manager-path}/shells/template-shell.nix . ;
         echo "use_nix" >> .envrc ;
         direnv allow ;
         $EDITOR shell.nix ;
@@ -66,4 +68,5 @@
   };
 
   home.file.".config/latexmkrc".source = ./dotfiles/latexmkrc;
+  home.file.".config/venv-manager/config/default.nix".source = ./dotfiles/venv-manager.nix;
 }
