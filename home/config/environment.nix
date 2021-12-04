@@ -42,7 +42,7 @@
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
-        cp ${venv-manager-path}/shells/template-shell.nix . ;
+        cp ${venv-manager-path}/template-shell.nix . ;
         echo "use_nix" >> .envrc ;
         direnv allow ;
         $EDITOR shell.nix ;
@@ -68,5 +68,6 @@
   };
 
   home.file.".config/latexmkrc".source = ./dotfiles/latexmkrc;
-  home.file.".config/venv-manager/config/default.nix".source = ./dotfiles/venv-manager.nix;
+  home.file.".config/venv-manager/config/default.nix".source =
+    ./dotfiles/venv-manager.nix;
 }
