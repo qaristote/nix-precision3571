@@ -42,7 +42,7 @@
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''
-        cp ${venv-manager-path}/template-shell.nix . ;
+        cp ${venv-manager-path}/shell-template.nix . ;
         echo "use_nix" >> .envrc ;
         direnv allow ;
         $EDITOR shell.nix ;
