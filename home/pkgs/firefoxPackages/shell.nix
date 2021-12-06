@@ -6,7 +6,6 @@ let
       inherit pkgs;
     };
   settings = {
-    nix.enable = true;
     nativeBuildInputs = [ nur.repos.rycee.firefox-addons-generator ];
   };
-in import ~/code/nix/shells { inherit pkgs settings; }
+in import ~/.config/venv-manager { inherit pkgs settings; }
