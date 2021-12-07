@@ -110,6 +110,8 @@ in {
   xdg.desktopEntries = let
     icons = pkgs.personal.icons;
     firefox-profiles-dir = "${config.home.homeDirectory}/.mozilla/firefox";
+    firefoxInProfile = profile:
+      "${pkgs.firefox}/bin/firefox --profile \"${firefox-profiles-dir}/${profile}\"";
   in {
     netflix = {
       name = "Netflix";
@@ -117,7 +119,7 @@ in {
       icon = "${icons.netflix}";
       comment = "Unlimited movies, TV shows, and more.";
       exec =
-        "${pkgs.firefox}/bin/firefox --profile ${firefox-profiles-dir}/streaming https://www.netflix.com/fr-en/login";
+        "${firefoxInProfile "streaming"} https://www.netflix.com/fr-en/login";
       categories = [ "AudioVideo" "Video" "Player" ];
     };
     mubi = {
@@ -125,8 +127,7 @@ in {
       genericName = "Streaming service";
       icon = "${icons.mubi}";
       comment = "Watch hand-picked cinema.";
-      exec =
-        "${pkgs.firefox}/bin/firefox --profile ${firefox-profiles-dir}/streaming https://mubi.com";
+      exec = "${firefoxInProfile "streaming"} https://mubi.com";
       categories = [ "AudioVideo" "Video" "Player" ];
     };
     deezer = {
@@ -134,9 +135,15 @@ in {
       genericName = "Streaming service";
       icon = "${icons.deezer}";
       comment = "Listen to music online";
-      exec =
-        "${pkgs.firefox}/bin/firefox --profile ${firefox-profiles-dir}/streaming https://deezer.com/login";
+      exec = "${firefoxInProfile "streaming"} https://deezer.com/login";
       categories = [ "AudioVideo" "Audio" "Player" "Music" ];
+    };
+    videoconferences = {
+      name = "Video Conferences";
+      genericName = "Video conference";
+      comment = "Use video conferencing software in a browser.";
+      exec = "${firefoxInProfile "videoconferencing"}";
+      categories = [ "Network" "VideoConference" ];
     };
   };
 }
