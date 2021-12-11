@@ -12,4 +12,14 @@
   nix.enable = lib.mkDefault true;
 
   ocaml.tuareg.enable = lib.mkDefault true;
+
+  why3 = {
+    defaultEditor = "emacsclient -c";
+    extraConfig = ''
+      [prover]
+      editor = ""
+      name = "Coq"
+      version = "8.13.2"
+    '';
+  };
 }
