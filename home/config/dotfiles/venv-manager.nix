@@ -2,6 +2,7 @@
 
 {
   direnv.enable = lib.mkDefault true;
+  pinDerivations.enable = lib.mkDefault true;
 
   latex.latexmk = {
     enable = lib.mkDefault true;
