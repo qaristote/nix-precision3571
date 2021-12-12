@@ -39,7 +39,7 @@ in {
     }) // (lib.optionalAttrs config.programs.alacritty.enable {
       "${modifier}+Return" = "exec ${pkgs.alacritty}/bin/alacritty";
     }) // (lib.optionalAttrs config.programs.rofi.enable {
-      "${modifier}+d" = ''exec "${rofi} -modi drun,run,window -show drun"'';
+      "${modifier}+d" = ''exec "${rofi} -modi drun,filebrowser,run,window -show drun"'';
       "${modifier}+Shift+d" = "exec ${rofi} -show window";
     }) // (lib.optionalAttrs config.services.emacs.client.enable {
       "${modifier}+Control+r" = "exec systemctl --user restart emacs.service";
