@@ -11,6 +11,7 @@
       (with pkgs.personal.gitignore; [ emacs linux direnv ])) ++ [
         ### Personal rules ###
         "shell.nix"
+        ".nix-gc-roots"
       ];
   };
 }
