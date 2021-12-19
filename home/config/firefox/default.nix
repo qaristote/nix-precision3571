@@ -14,10 +14,15 @@ let
     "keyword.enabled" = true; # 0801
     "signon.rememberSignons" = false; # 0901
     "security.nocertdb" = true; # 1222
+    "media.peerconnection.enabled" = false; # 2001
+    "media.peerconnection.ice.no_host" = true; # 2004
     "dom.allow_cut_copy" = true; # 2404
     "dom.battery.enabled" = false; # 2502
     "dom.vr.enabled" = false; # 2520
     "permissions.default.xr" = 2; # 2521
+    "privacy.clearOnShutdown.offlineApps" = true; # 2811
+    "privacy.clearOnShutdown.cookies" = true; # 2811
+    "privacy.clearOnShutdown.siteSettings" = true; # 2811
 
     # Personal
     "browser.tabs.warnOnClose" = false;
@@ -78,6 +83,9 @@ in {
           "privacy.clearOnShutdown.cache" = false;
           "privacy.clearOnShutdown.cookies" = false;
           "privacy.clearOnShutdown.siteSettings" = false;
+          "privacy.clearOnShutdown.offlineApps" = false;
+          "network.cookie.lifetimePolicy" = 0;
+          "privacy.resistFingerprinting" = false; # Netflix is whining
         };
         userChrome = userchrome-treestyletabs;
       };
@@ -111,7 +119,8 @@ in {
     icons = pkgs.personal.icons;
     firefox-profiles-dir = "${config.home.homeDirectory}/.mozilla/firefox";
     firefoxInProfile = profile:
-      "${pkgs.firefox}/bin/firefox --profile \"${firefox-profiles-dir}/${profile}\"";
+      ''
+        ${pkgs.firefox}/bin/firefox --profile "${firefox-profiles-dir}/${profile}"'';
   in {
     netflix = {
       name = "Netflix";

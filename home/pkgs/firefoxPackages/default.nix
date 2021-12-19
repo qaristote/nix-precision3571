@@ -7,8 +7,7 @@ in {
     inherit (pkgs-rycee.firefox-addons) buildFirefoxXpiAddon;
   };
   arkenfox-userjs = pkgs.fetchurl {
-    url =
-      "https://raw.githubusercontent.com/arkenfox/user.js/85438d00e457bff692303af519da618c6372476b/user.js";
-    sha256 = "11hw11x3yl0pk5dhx1j1k6yi6i2yjd82pb5nz3jsafa04hl1jpr2";
+    url = "https://raw.githubusercontent.com/arkenfox/user.js/7e1b92567ca2bb76ad358d0fc786fd60b3cf7970/user.js";
+    sha256 = "1v2w51szrd2yjki9gdvzc488rqmrmyxn90g2vv1pwg121wklw30q";
   };
 }
