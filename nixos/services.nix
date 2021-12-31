@@ -9,7 +9,7 @@
   services = {
     fcron = {
       enable = true;
-      allow = [ "qaristote" ];
+      allow = [ "root" "qaristote" ];
       systab = ''
         # Update the system.
         @daily root ${pkgs.nix}/bin/nix-channel --update; ${pkgs.nixos-rebuild}/bin/nixos-rebuild switch
