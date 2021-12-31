@@ -29,10 +29,10 @@
       };
     "clearurls" = buildFirefoxXpiAddon {
       pname = "clearurls";
-      version = "1.21.0";
+      version = "1.22.0";
       addonId = "{74145f27-f039-47ce-a470-a662b129930a}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3748919/clearurls-1.21.0-an+fx.xpi";
-      sha256 = "eb0b199cd478b21bc1fab59be627603946d1474070aa4eb482c44d18c041d974";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3886960/clearurls-1.22.0-an+fx.xpi";
+      sha256 = "f226a4b5e0865a884bc6544810a0e768a821a4c3eb411c00f77a727272212559";
       meta = with lib;
       {
         homepage = "https://clearurls.xyz/";
@@ -43,10 +43,10 @@
       };
     "darkreader" = buildFirefoxXpiAddon {
       pname = "darkreader";
-      version = "4.9.42";
+      version = "4.9.43";
       addonId = "addon@darkreader.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3864423/dark_reader-4.9.42-an+fx.xpi";
-      sha256 = "592885b9a7b568d055207eb52bef3e13aa75c1015a98a19b4e6ecd79c2725403";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3878116/dark_reader-4.9.43-an+fx.xpi";
+      sha256 = "390bdc2609b43627b58e47bb3a3c2f42b156f16bd932b93746196615134db0b1";
       meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -57,14 +57,14 @@
       };
     "multi-account-containers" = buildFirefoxXpiAddon {
       pname = "multi-account-containers";
-      version = "8.0.1";
+      version = "8.0.4";
       addonId = "@testpilot-containers";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3862036/firefox_multi_account_containers-8.0.1-fx.xpi";
-      sha256 = "00b710bd0825d008d5536d0672c639551c313c9b2fbca41c835b3a952024b42a";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3881338/firefox_multi_account_containers-8.0.4-fx.xpi";
+      sha256 = "e1606931a955eddb130bad0bdf19761b47450bf531ab2680dac5ae2e7fe3c097";
       meta = with lib;
       {
         homepage = "https://github.com/mozilla/multi-account-containers/#readme";
-        description = "Firefox Multi-Account Containers lets you keep parts of your online life separated into color-coded tabs that preserve your privacy. Cookies are separated by container, allowing you to use the web with multiple identities or accounts simultaneously.";
+        description = "Firefox Multi-Account Containers lets you keep parts of your online life separated into color-coded tabs. Cookies are separated by container, allowing you to use the web with multiple accounts and integrate Mozilla VPN for an extra layer of privacy.";
         license = licenses.mpl20;
         platforms = platforms.all;
         };
@@ -126,10 +126,10 @@
       };
     "tree-style-tab" = buildFirefoxXpiAddon {
       pname = "tree-style-tab";
-      version = "3.8.16";
+      version = "3.8.18";
       addonId = "treestyletab@piro.sakura.ne.jp";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3866562/tree_style_tab-3.8.16-fx.xpi";
-      sha256 = "9cf29fdd9ed11f7fa43c0bf094a5fbf599c69c4568017478f1f57a934f30d18b";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3886076/tree_style_tab-3.8.18-fx.xpi";
+      sha256 = "0cbb1bcfe9f488f3618723b6bd9ee076eb2da097a3a008c8fffecf4c98dcafd1";
       meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
@@ -139,10 +139,10 @@
       };
     "ublock-origin" = buildFirefoxXpiAddon {
       pname = "ublock-origin";
-      version = "1.38.6";
+      version = "1.40.2";
       addonId = "uBlock0@raymondhill.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3853583/ublock_origin-1.38.6-an+fx.xpi";
-      sha256 = "d095ce1d57e5b46d1de55f6f57d239630ec6259434449f45d7163d69f5c0cc85";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3886236/ublock_origin-1.40.2-an+fx.xpi";
+      sha256 = "837915929c950651e46ed5cc30aa9faed84136e7715e74369a2eadf328bea065";
       meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
