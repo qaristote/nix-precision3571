@@ -7,8 +7,8 @@
 {
   imports = [
     <home-manager/nixos>
-    <nixos-hardware/dell/latitude/7490/>
-    
+    <nixos-hardware/dell/latitude/7490>
+
     ./boot.nix
     ./locale.nix
     ./networking.nix
