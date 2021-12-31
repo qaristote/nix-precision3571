@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let cfg = config.users.users;
 in {
@@ -12,7 +12,7 @@ in {
   };
 
   home-manager = {
-    users.qaristote = import (cfg.qaristote.home + /.config/nixpkgs);
+    users.qaristote = (import (/home/qaristote/.config/nixpkgs));
     useGlobalPkgs = false;
     useUserPackages = true; # to enable fontconfig inside home-manager
   };
