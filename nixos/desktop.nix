@@ -55,7 +55,7 @@ in {
     autoRepeatDelay = 200;
   };
 
-  # Enable all users to change hardware settings (brightness, backlight)
+  # Allow all users to change hardware settings (brightness, backlight)
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
     ACTION=="add", SUBSYSTEM=="leds", KERNEL=="dell::kbd_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/leds/%k/brightness"
