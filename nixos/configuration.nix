@@ -19,7 +19,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ vim coreutils openssl ];
+  environment.systemPackages = with pkgs; [ vim busybox coreutils openssl ];
   nixpkgs.config = { allowUnfree = true; };
 
   nix = {
