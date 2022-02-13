@@ -12,7 +12,7 @@ in {
     package = pkgs.numix-cursor-theme;
   };
   dconf.enable = true;
-  home.packages = with pkgs; [ gnome3.dconf ];
+  home.packages = with pkgs; [ dconf ];
   gtk = {
     enable = true;
     theme = {
