@@ -8,6 +8,7 @@ in {
       "wheel" # Enable ‘sudo’ for the user.
       "audio"
       "networkmanager"
+      "docker"
     ];
   };
 
