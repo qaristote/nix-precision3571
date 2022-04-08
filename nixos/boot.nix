@@ -18,7 +18,7 @@
       #   # Generate the image with generate-recovery.sh
       #   ''
       #   menuentry "NixOS - Recovery" {
-      #   search --set=drive1 -fs-uuid 330B-45DE 
+      #   search --set=drive1 -fs-uuid 330B-45DE
       #          linux ($drive1)//kernels/recovery-linux-bzImage loglevel=4
       #          initrd ($drive1)//kernels/recovery-initrd
       #   }
