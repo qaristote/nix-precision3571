@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   direnv.enable = lib.mkDefault true;
@@ -23,11 +23,12 @@
 
   ocaml.tuareg.enable = lib.mkDefault true;
 
-  coq.coq = pkgs.coq_8_15.override { buildIde = false; };
+  coq.coq = pkgs.coq_8_15;
+    # pkgs.coq_8_15.override { buildIde = false; };
 
   why3 = {
     defaultEditor = "emacsclient -c";
-    extraConfig = ''
+    extraConfig = lib.optionalString config.coq.enable ''
       [prover]
       editor = ""
       name = "Coq"
