@@ -34,6 +34,10 @@
       options = "--delete-old";
     };
   };
+  system.autoUpgrade = {
+    enable = true;
+    flags = [ "--upgrade-all" ];
+  }
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
