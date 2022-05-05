@@ -64,6 +64,7 @@ This function should only modify configuration layer settings."
      latex
      markdown
      ocaml coq
+     php
      python
      rust
      yaml
