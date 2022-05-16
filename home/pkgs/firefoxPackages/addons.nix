@@ -15,10 +15,10 @@
       };
     "canvasblocker" = buildFirefoxXpiAddon {
       pname = "canvasblocker";
-      version = "1.7";
+      version = "1.8";
       addonId = "CanvasBlocker@kkapsner.de";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3864535/canvasblocker-1.7-an+fx.xpi";
-      sha256 = "770caeb39e93ec332946473c183de6a9f8746ac4c9d6527dc4c14d1089b23d60";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3910598/canvasblocker-1.8-an+fx.xpi";
+      sha256 = "817a6181be877668eca1d0fef9ecf789c898e6d7d93dca7e29479d40f986c844";
       meta = with lib;
       {
         homepage = "https://github.com/kkapsner/CanvasBlocker/";
@@ -29,10 +29,10 @@
       };
     "clearurls" = buildFirefoxXpiAddon {
       pname = "clearurls";
-      version = "1.22.0";
+      version = "1.24.1";
       addonId = "{74145f27-f039-47ce-a470-a662b129930a}";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3886960/clearurls-1.22.0-an+fx.xpi";
-      sha256 = "f226a4b5e0865a884bc6544810a0e768a821a4c3eb411c00f77a727272212559";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3927638/clearurls-1.24.1-an+fx.xpi";
+      sha256 = "41259fc4c330261e19ff4d38734eb5fdad92e7a358a16175383e31c62d50f06b";
       meta = with lib;
       {
         homepage = "https://clearurls.xyz/";
@@ -43,10 +43,10 @@
       };
     "darkreader" = buildFirefoxXpiAddon {
       pname = "darkreader";
-      version = "4.9.45";
+      version = "4.9.50";
       addonId = "addon@darkreader.org";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3904618/dark_reader-4.9.45-an+fx.xpi";
-      sha256 = "7df6f5a6c07d3740ed26be3c24fdd1719b77e685506e2642f756ce3538b3cc7f";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3943310/dark_reader-4.9.50-an+fx.xpi";
+      sha256 = "e726c87b43dc7965a07a8d88396ea966cd3ab5d9d03743d938cda34081d4e067";
       meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -57,10 +57,10 @@
       };
     "multi-account-containers" = buildFirefoxXpiAddon {
       pname = "multi-account-containers";
-      version = "8.0.5";
+      version = "8.0.7";
       addonId = "@testpilot-containers";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3899402/firefox_multi_account_containers-8.0.5-fx.xpi";
-      sha256 = "b9d6267a8fd633cd64a0444b6355c299bc4a3f23d21e794117e339c5ec705039";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3932862/firefox_multi_account_containers-8.0.7-fx.xpi";
+      sha256 = "0e60e00c13dcc372b43ddb2e5428c2e3c1e79d2b23d7166df82d45245edc4f10";
       meta = with lib;
       {
         homepage = "https://github.com/mozilla/multi-account-containers/#readme";
@@ -126,10 +126,10 @@
       };
     "tree-style-tab" = buildFirefoxXpiAddon {
       pname = "tree-style-tab";
-      version = "3.8.20";
+      version = "3.8.23";
       addonId = "treestyletab@piro.sakura.ne.jp";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3905819/tree_style_tab-3.8.20-fx.xpi";
-      sha256 = "1586435713e5218379b171df2159af9cfaffcd7f972dfb2c9f1c7d5baa868046";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3943215/tree_style_tab-3.8.23-fx.xpi";
+      sha256 = "531cea228e243f187407a6a25b7390984835c8d5879dcfe516d7b337ec2369be";
       meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
@@ -139,10 +139,10 @@
       };
     "ublock-origin" = buildFirefoxXpiAddon {
       pname = "ublock-origin";
-      version = "1.41.2";
+      version = "1.42.4";
       addonId = "uBlock0@raymondhill.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/3907015/ublock_origin-1.41.2-an+fx.xpi";
-      sha256 = "0ff07ab9f13d793ee8e5796937b3f06fa80bdcbec40d742374b0ce7ad04ff46b";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3933192/ublock_origin-1.42.4-an+fx.xpi";
+      sha256 = "bc3c335c961269cb40dd11551788d0d8674aefcacdc8fbdf6c19845eaea339ce";
       meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
