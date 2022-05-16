@@ -7,7 +7,7 @@ in {
   xsession.enable = true;
 
   # Look and feel
-  xsession.pointerCursor = {
+  home.pointerCursor = {
     name = "Numix-Cursor-Light";
     package = pkgs.numix-cursor-theme;
   };
