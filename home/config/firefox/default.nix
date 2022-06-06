@@ -25,14 +25,22 @@ let
     "privacy.clearOnShutdown.siteSettings" = true; # 2811
 
     # Personal
+    ## Warnings
     "browser.tabs.warnOnClose" = false;
     "browser.tabs.warnOnCloseOtherTabs" = false;
+    ## Updates
+    "app.update.auto" = false;
+    "browser.search.update" = false;
+    ## Appearance
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+    ## Content behavior
     "clipboard.autocopy" = false;
+    ## UX behavior
     "browser.quitShortcut.disabled" = true;
     "browser.tabs.closeWindowWithLastTab" = false;
+    ## UX features
     "extensions.pocket.enabled" = false;
     "identity.fxaccounts.enabled" = false;
-    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };
 
   userchrome-treestyletabs = ''
