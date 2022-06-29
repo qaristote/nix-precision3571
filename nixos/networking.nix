@@ -13,6 +13,7 @@
   # Hosts
   networking.hosts = {
     "10.3.141.1" = [ "raspberrypi.local" ];
+    "192.168.1.10" = [ "dionysos.local" ];
     # "10.233.1.2" = [ "searx.aristote.fr" "quentin.aristote.fr" "aristote.fr" ];
   };
 
