@@ -3,7 +3,7 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs.overrideAttrs (oldAttrs: rec { nativeComp = true; });
+    # package = pkgs.emacs.overrideAttrs (oldAttrs: rec { nativeComp = true; });
   };
   services.emacs = {
     enable = true;
