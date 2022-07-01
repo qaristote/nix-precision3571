@@ -11,11 +11,13 @@ import (
 	"barista.run"
 	"barista.run/bar"
 	"barista.run/colors"
+	"barista.run/group"
 	"barista.run/modules/battery"
 	"barista.run/modules/clock"
 	"barista.run/modules/diskspace"
 	"barista.run/modules/funcs"
 	"barista.run/modules/netinfo"
+	"barista.run/modules/systemd"
 	"barista.run/modules/volume"
 	"barista.run/modules/volume/pulseaudio"
 	"barista.run/modules/wlan"
@@ -33,6 +35,43 @@ func main() {
 		"bad":      "#FFBC88",
 	})
 	mdi.Load() // repo path will be inserted at build time
+
+	// Display status of several services
+	updateIcon := pango.Icon("mdi-update")
+	garbageFullIcon := pango.Icon("mdi-delete")
+	garbageEmptyingIcon := pango.Icon("mdi-delete-restore")
+	garbageEmptyIcon := pango.Icon("mdi-delete-outline")
+	barista.Add(group.Simple(systemd.Service("nixos-upgrade").Output(func(i systemd.ServiceInfo) bar.Output {
+		state := i.UnitInfo.State
+		var colorScheme string
+		switch {
+		case state == systemd.StateInactive:
+			colorScheme = "good"
+		case state == systemd.StateActivating:
+			colorScheme = "degraded"
+		default:
+			colorScheme = "bad"
+		}
+		return outputs.Pango(updateIcon).Color(colors.Scheme(colorScheme))
+	}),
+
+		systemd.Service("nixos-upgrade").Output(func(i systemd.ServiceInfo) bar.Output {
+			state := i.UnitInfo.State
+			var colorScheme string
+			var output *pango.Node
+			switch {
+			case state == systemd.StateInactive:
+				colorScheme = "good"
+				output = garbageEmptyIcon
+			case state == systemd.StateActivating:
+				colorScheme = "degraded"
+				output = garbageEmptyingIcon
+			default:
+				colorScheme = "bad"
+				output = garbageFullIcon
+			}
+			return outputs.Pango(output).Color(colors.Scheme(colorScheme))
+		})))
 
 	// Display space left on /
 	storageIcon := pango.Icon("mdi-database")
@@ -89,36 +128,44 @@ func main() {
 	wifiRefreshIcon := pango.Icon("mdi-wifi-refresh")
 	wifiOnIcon := pango.Icon("mdi-wifi")
 	barista.Add(wlan.Named("wlp2s0").Output(func(w wlan.Info) bar.Output {
+		var output *pango.Node
+		var colorScheme string
 		switch {
 		case w.Connected():
-			return outputs.Pango(wifiOnIcon, pango.Textf(" %s", w.SSID)).Color(colors.Scheme("good"))
+			output = wifiOnIcon.AppendTextf(" %s", w.SSID)
+			colorScheme = "good"
 		case w.Connecting():
-			return outputs.Pango(wifiRefreshIcon).Color(colors.Scheme("degraded"))
-		case w.Enabled():
-			return outputs.Pango(wifiOffIcon).Color(colors.Scheme("bad"))
+			output = wifiRefreshIcon
+			colorScheme = "degraded"
 		default:
-			return nil
+			output = wifiOffIcon
+			colorScheme = "bad"
 		}
+		return outputs.Pango(output).Color(colors.Scheme(colorScheme))
 	}))
 
 	// Display the ethernet status
 	ethernetCableOnIcon := pango.Icon("mdi-ethernet-cable")
 	ethernetCableOffIcon := pango.Icon("mdi-ethernet-cable-off")
 	barista.Add(netinfo.Prefix("e").Output(func(s netinfo.State) bar.Output {
+		var output *pango.Node
+		var colorScheme string
 		switch {
 		case s.Connected():
 			ip := "<no ip>"
 			if len(s.IPs) > 0 {
 				ip = s.IPs[0].String()
 			}
-			return outputs.Pango(ethernetCableOnIcon, pango.Textf(" %s", ip)).Color(colors.Scheme("good"))
+			output = ethernetCableOnIcon.AppendTextf(" %s", ip)
+			colorScheme = "good"
 		case s.Connecting():
-			return outputs.Pango(ethernetCableOnIcon).Color(colors.Scheme("degraded"))
-		case s.Enabled():
-			return outputs.Pango(ethernetCableOffIcon).Color(colors.Scheme("bad"))
+			output = ethernetCableOnIcon
+			colorScheme = "degraded"
 		default:
-			return nil
+			output = ethernetCableOffIcon
+			colorScheme = "bad"
 		}
+		return outputs.Pango(output).Color(colors.Scheme(colorScheme))
 	}))
 
 	// Display the battery status
@@ -221,7 +268,7 @@ func main() {
 	microphoneOffIcon := pango.Icon("mdi-microphone-off")
 	microphoneIcon := pango.Icon("mdi-microphone")
 	barista.Add(volume.New(pulseaudio.DefaultSource()).Output(func(v volume.Volume) bar.Output {
-		volume := v.Pct() // the value returned by the pulseaudio may be weird
+		volume := v.Pct() // the value returned by pulseaudio may be weird
 		var icon *pango.Node
 		if volume == 0 || v.Mute {
 			icon = microphoneOffIcon
