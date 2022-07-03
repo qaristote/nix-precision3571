@@ -132,7 +132,7 @@ func main() {
 		var colorScheme string
 		switch {
 		case w.Connected():
-			output = wifiOnIcon.AppendTextf(" %s", w.SSID)
+			output = pango.New(wifiOnIcon, pango.Textf(" %s", w.SSID))
 			colorScheme = "good"
 		case w.Connecting():
 			output = wifiRefreshIcon
@@ -156,7 +156,7 @@ func main() {
 			if len(s.IPs) > 0 {
 				ip = s.IPs[0].String()
 			}
-			output = ethernetCableOnIcon.AppendTextf(" %s", ip)
+			output = pango.New(ethernetCableOnIcon, pango.Textf(" %s", ip))
 			colorScheme = "good"
 		case s.Connecting():
 			output = ethernetCableOnIcon
