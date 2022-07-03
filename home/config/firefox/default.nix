@@ -20,8 +20,6 @@ let
     "dom.battery.enabled" = false; # 2502
     "dom.vr.enabled" = false; # 2520
     "permissions.default.xr" = 2; # 2521
-    "privacy.clearOnShutdown.offlineApps" = true; # 2811
-    "privacy.clearOnShutdown.cookies" = true; # 2811
     "privacy.clearOnShutdown.siteSettings" = true; # 2811
 
     # Personal
@@ -92,7 +90,6 @@ in {
           "privacy.clearOnShutdown.cookies" = false;
           "privacy.clearOnShutdown.siteSettings" = false;
           "privacy.clearOnShutdown.offlineApps" = false;
-          "network.cookie.lifetimePolicy" = 0;
           "privacy.resistFingerprinting" = false; # Netflix is whining
         };
         userChrome = userchrome-treestyletabs;
