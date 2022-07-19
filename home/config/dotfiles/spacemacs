@@ -597,6 +597,9 @@ before packages are loaded."
   ;; auto-completion
   (global-company-mode t)
 
+  ;; hooks
+  (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+
   ;; Key bindings
   (defun my-ediff-dotfile-and-template ()
     (interactive)
