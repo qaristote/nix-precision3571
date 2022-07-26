@@ -8,6 +8,7 @@
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "i915.dc_enable=0" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f5809224-8478-474f-b25d-dde1ada37957";

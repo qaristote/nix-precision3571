@@ -8,6 +8,7 @@
   imports = [
     <home-manager/nixos>
     <nixos-hardware/dell/latitude/7490>
+    <nixos-hardware/common/pc/ssd>
 
     ./boot.nix
     ./locale.nix
