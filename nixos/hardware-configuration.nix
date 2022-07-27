@@ -1,14 +1,19 @@
 { lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+
+    <nixos-hardware/dell/latitude/7490>
+    <nixos-hardware/common/pc/ssd>
+  ];
 
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "i915.dc_enable=0" ];
+  # boot.kernelParams = [ "i915.dc_enable=0" ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f5809224-8478-474f-b25d-dde1ada37957";
