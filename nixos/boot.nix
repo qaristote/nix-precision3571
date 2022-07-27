@@ -1,8 +1,11 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    <nixos-hardware/dell/latitude/7490>
+    <nixos-hardware/common/pc/ssd>
   ];
 
   boot.loader = {
@@ -34,4 +37,13 @@
       preLVM = true;
     };
   };
+
+  # Kernel
+  boot.initrd.availableKernelModules =
+    [ "usb_storage" ];
+  boot.kernelParams =
+    [ "i915.dc_enable=0" "intel_idle.max_cstate=1" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.firmware = with pkgs; [ firmwareLinuxNonfree ];
 }
