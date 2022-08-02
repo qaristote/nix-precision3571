@@ -46,5 +46,9 @@
 
   # Hardware
   hardware.firmware = with pkgs; [ firmwareLinuxNonfree ];
+  ## mcelog
   hardware.mcelog.enable = true;
+  services.udev.extraRules = ''
+    ACTION=="add", KERNEL=="mcelog", SUBSYSTEM=="misc", TAG+="systemd", ENV{SYSTEMD_WANTS}+="mcelog.service"
+  ''
 }
