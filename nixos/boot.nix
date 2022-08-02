@@ -40,10 +40,8 @@
   };
 
   # Kernel
-  boot.initrd.availableKernelModules =
-    [ "usb_storage" ];
-  boot.kernelParams =
-    [ "i915.dc_enable=0" "intel_idle.max_cstate=1" ];
+  boot.initrd.availableKernelModules = [ "usb_storage" ];
+  boot.kernelParams = [ "i915.dc_enable=0" "intel_idle.max_cstate=1" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hardware
