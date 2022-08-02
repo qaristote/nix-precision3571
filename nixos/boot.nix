@@ -8,6 +8,7 @@
     <nixos-hardware/common/pc/ssd>
   ];
 
+  # Bootloader
   boot.loader = {
     efi = { canTouchEfiVariables = true; };
     grub = {
@@ -45,5 +46,7 @@
     [ "i915.dc_enable=0" "intel_idle.max_cstate=1" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Hardware
   hardware.firmware = with pkgs; [ firmwareLinuxNonfree ];
+  hardware.mcelog.enable = true;
 }
