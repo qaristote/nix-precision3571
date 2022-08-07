@@ -3,7 +3,8 @@
 let
   fetch-gitignore = module: sha256:
     let url = "https://www.toptal.com/developers/gitignore/api/" + module;
-    in pkgs.fetchurl { inherit url sha256; };
+        name = module + ".gitignore";
+    in pkgs.fetchurl { inherit url sha256 name; };
 in {
   emacs = fetch-gitignore "emacs"
     "sha256:34LaJsGa5fFSMjE7l8JgQAmH8f07jcQmsaOdPVctHMk=";
