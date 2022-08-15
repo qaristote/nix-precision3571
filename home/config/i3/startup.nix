@@ -14,7 +14,7 @@ in {
     (autostart { command = "systemctl --user xidlehook.service"; }))
   ++ (lib.optional config.services.emacs.enable
     (autostart { command = "systemctl --user start emacs.service"; })) ++ [
-      # (autostart { command = "xfce4-power-manager --daemon"; })
+      (autostart { command = "xfce4-power-manager --daemon"; })
       (autostart { command = "rfkill block bluetooth"; })
       # Launch frequently used apps
       (autostart { command = "thunderbird"; })
