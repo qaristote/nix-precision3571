@@ -594,6 +594,9 @@ before packages are loaded."
                                     "addbibresource"))
    ;; https://tex.stackexchange.com/a/213909
    '(reftex-use-external-file-finders t)
+
+   ;; don't pop warning buffer on native comp
+   '(native-comp-async-report-warnings-errors 'silent)
    )
 
   ;; auto-completion
