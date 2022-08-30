@@ -6,6 +6,6 @@ let
       inherit pkgs;
     };
   settings = {
-    nativeBuildInputs = [ nur.repos.rycee.firefox-addons-generator ];
+    nativeBuildInputs = [ nur.repos.rycee.mozilla-addons-to-nix ];
   };
 in import ~/.config/venv-manager { inherit pkgs settings; }
