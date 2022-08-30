@@ -37,8 +37,7 @@
       venv-manager-path = "~/.config/venv-manager";
     in {
       amimullvad = "curl -Ls https://am.i.mullvad.net/connected";
-      nixos-update-config =
-        "sudo cp -rf ${nix-code-path}/latitude-7490/nixos/ /etc/";
+      nixos-update-config = builtins.readFile ./scripts/nixos-update-config;
       rm = "rm -f";
       ssh = "TERM=xterm-256color ssh";
       mkenv = ''

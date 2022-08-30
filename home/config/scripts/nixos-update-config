@@ -1,0 +1,1 @@
+sudo cp -rf ${nix-code-path}/latitude-7490/nixos/ /etc/
