@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -37,6 +37,7 @@
     enable = true;
     flags = [ "--upgrade-all" ];
   };
+  systemd.services.nix-gc.after = lib.mkIf config.system.autoUpgrade.enable [ "nixos-upgrade.service" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
