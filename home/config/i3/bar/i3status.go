@@ -37,25 +37,30 @@ func main() {
 	mdi.Load() // repo path will be inserted at build time
 
 	// Display status of several services
-	updateIcon := pango.Icon("mdi-update")
+	updateSuccessIcon := pango.Icon("mdi-reload")
+	updatingIcon := pango.Icon("mdi-update")
+	updateFailIcon := pango.Icon("mdi-reload-alert")
 	garbageFullIcon := pango.Icon("mdi-delete")
 	garbageEmptyingIcon := pango.Icon("mdi-delete-restore")
 	garbageEmptyIcon := pango.Icon("mdi-delete-outline")
 	barista.Add(group.Simple(systemd.Service("nixos-upgrade").Output(func(i systemd.ServiceInfo) bar.Output {
 		state := i.UnitInfo.State
 		var colorScheme string
+		var output *pango.Node
 		switch {
 		case state == systemd.StateInactive:
 			colorScheme = "good"
+			output = updateSuccessIcon
 		case state == systemd.StateActivating:
 			colorScheme = "degraded"
+			output = updatingIcon
 		default:
 			colorScheme = "bad"
+			output = updateFailIcon
 		}
-		return outputs.Pango(updateIcon).Color(colors.Scheme(colorScheme))
+		return outputs.Pango(output).Color(colors.Scheme(colorScheme))
 	}),
-
-		systemd.Service("nixos-upgrade").Output(func(i systemd.ServiceInfo) bar.Output {
+		systemd.Service("nix-gc").Output(func(i systemd.ServiceInfo) bar.Output {
 			state := i.UnitInfo.State
 			var colorScheme string
 			var output *pango.Node
