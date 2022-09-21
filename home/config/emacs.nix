@@ -34,7 +34,6 @@ in {
       Unit = {
         Description = "Run Spacemacs update periodically";
         After = [ "network-online.target" ];
-        X-RestartIfChanged = true;
       };
 
       Timer = {
