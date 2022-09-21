@@ -2,7 +2,6 @@
 
 {
   direnv.enable = lib.mkDefault true;
-  pinDerivations.enable = lib.mkDefault true;
 
   latex = {
     packages = tl: {
