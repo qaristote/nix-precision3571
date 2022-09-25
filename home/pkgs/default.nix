@@ -8,4 +8,6 @@
   fontMetadata = import ./fontMetadata { inherit pkgs; };
   gitignore = import ./gitignore { inherit pkgs; };
   icons = import ./icons { inherit pkgs; };
+
+  lib = import ./lib { inherit pkgs; };
 }
