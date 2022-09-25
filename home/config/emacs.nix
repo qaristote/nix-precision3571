@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
-let cfg = config.programs.emacs;
+let
+  cfg = config.programs.emacs;
+  spacemacs-update-script = pkgs.writeShellScript "spacemacs-update" ''
+    ${pkgs.git}/bin/git pull
+    ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages)'
+  '';
 in {
   programs.emacs = {
     enable = true;
@@ -13,36 +18,21 @@ in {
 
   home.file.".spacemacs.d/init.el".source = ./dotfiles/spacemacs;
 
-  systemd.user = lib.mkIf cfg.enable {
-    services.update-spacemacs = {
+  systemd.user = lib.mkIf cfg.enable
+    (pkgs.personal.lib.serviceWithTimer "spacemacs-update" {
       Unit = {
         Description = "Update Spacemacs by pulling the develop branch";
         After = [ "network-online.target" ];
-        X-RestartIfChanged = true;
       };
-
       Service = {
         Type = "oneshot";
         WorkingDirectory = "${config.home.homeDirectory}/.emacs.d/";
-        ExecStart =
-          "${pkgs.git}/bin/git pull ; ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages)'";
+        ExecStart = "${spacemacs-update-script}";
       };
-
-      Install.WantedBy = [ "default.target" ];
-    };
-    timers.update-spacemacs = {
-      Unit = {
-        Description = "Run Spacemacs update periodically";
-        After = [ "network-online.target" ];
-      };
-
       Timer = {
-        Unit = "update-spacemacs.service";
         Persistent = true;
         OnCalendar = "daily";
       };
-
-      Install.WantedBy = [ "default.target" ];
-    };
-  };
+      Install = { WantedBy = [ "default.target" ]; };
+    });
 }
