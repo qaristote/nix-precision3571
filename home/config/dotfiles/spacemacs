@@ -43,11 +43,8 @@ This function should only modify configuration layer settings."
      ;; eww
      git
      helm
-     javascript
      ;; lsp
      multiple-cursors
-     nixos
-     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -61,8 +58,12 @@ This function should only modify configuration layer settings."
      csv
      emacs-lisp spacemacs-misc
      go
+     (haskell :variables haskell-enable-hindent-style "fundamental")
+     html javascript
      latex
      markdown
+     nixos
+     org
      ocaml coq
      php
      python
@@ -597,6 +598,9 @@ before packages are loaded."
 
    ;; don't pop warning buffer on native comp
    '(native-comp-async-report-warnings-errors 'silent)
+
+   ;; restrict which warnings are shown
+   '(warning-minimum-level :emergency)
    )
 
   ;; auto-completion

@@ -3,6 +3,8 @@
 {
   direnv.enable = lib.mkDefault true;
 
+  haskell = { spacemacs.enable = lib.mkDefault true; };
+
   latex = {
     packages = tl: {
       inherit (tl)
@@ -23,7 +25,7 @@
   ocaml.tuareg.enable = lib.mkDefault true;
 
   coq.coq = pkgs.coq_8_15;
-    # pkgs.coq_8_15.override { buildIde = false; };
+  # pkgs.coq_8_15.override { buildIde = false; };
 
   why3 = {
     defaultEditor = "emacsclient -c";
