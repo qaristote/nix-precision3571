@@ -1,49 +1,23 @@
 { lib, config, pkgs, ... }:
 
-let
-  userService = user: {
-    serviceConfig.User = user;
-    environment.HOME = config.users.users."${user}".home;
-  };
-in {
+{
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   systemd.services = {
-    direnv-reload = {
+    nix-gc-remove-dead-roots = {
       enable = true;
-      description = "Update virtual environments of user qaristote";
-
-      restartIfChanged = false;
-      unitConfig.X-StopOnRemoval = false;
-      serviceConfig.Type = "oneshot";
-
-      environment.NIX_PATH = config.environment.sessionVariables.NIX_PATH;
-
-      path = with pkgs; [ direnv ];
-      script =
-        "find $HOME -type d -name .nix-gc-roots -execdir direnv exec . true \\;";
-
-      after =
-        lib.mkIf config.system.autoUpgrade.enable [ "nixos-upgrade.service" ];
-      requiredBy =
-        lib.mkIf config.system.autoUpgrade.enable [ "nixos-upgrade.service" ];
-    } // (userService "qaristote");
-    direnv-prune = {
-      enable = true;
-      description = "Clean virtual environments of user qaristote";
+      description = "Remove dead symlinks in /nix/var/nix/gcroots";
 
       serviceConfig.Type = "oneshot";
 
-      path = with pkgs; [ direnv ];
-      script = "find $HOME -type d -name .direnv -execdir direnv prune \\;";
+      script = "find /nix/var/nix/gcroots -xtype l -delete";
 
-      after = [ "direnv-reload.service" ];
       before = lib.mkIf config.nix.gc.automatic [ "nix-gc.service" ];
-      requiredBy = lib.mkIf config.nix.gc.automatic [ "nix-gc.service" ];
-    } // (userService "qaristote");
+      wantedBy = lib.mkIf config.nix.gc.automatic [ "nix-gc.service" ];
+    };
   };
 
   # virtualisation.docker.enable = true;

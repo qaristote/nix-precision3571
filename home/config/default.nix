@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./direnv.nix
     ./environment.nix
     ./emacs.nix
     ./firefox
