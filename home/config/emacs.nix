@@ -22,7 +22,7 @@ in {
     (pkgs.personal.lib.serviceWithTimer "spacemacs-update" {
       Unit = {
         Description = "Update Spacemacs by pulling the develop branch";
-        After = [ "network-online.target" ];
+        After = [ "network-online.target" "emacs.service" ];
       };
       Service = {
         Type = "oneshot";
