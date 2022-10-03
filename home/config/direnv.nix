@@ -16,12 +16,12 @@ in {
       };
       Service = {
         Type = "oneshot";
-        ExecSearchPath = "${pkgs.coreutils}/bin:${pkgs.findutils}/bin:${pkgs.direnv}/bin";
+        ExecSearchPath = "${pkgs.coreutils}/bin:${pkgs.findutils}/bin:${pkgs.direnv}/bin:/bin/sh";
         WorkingDirectory = "${config.home.homeDirectory}";
         ExecStart = ''
           find -type d -name .direnv \
-            -execdir rm -f .direnv/{nix,flake}-profile* \; \
-            -execdir direnv exec . true \;
+               -execdir /bin/sh -c "rm -f .direnv/{nix,flake}-profile*" \; \
+               -execdir direnv exec . true \;
         '';
       };
       Timer = {
