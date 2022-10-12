@@ -4,7 +4,7 @@ let
   cfg = config.programs.emacs;
   spacemacs-update-script = pkgs.writeShellScript "spacemacs-update" ''
     ${pkgs.git}/bin/git pull
-    ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages)'
+    ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages "no-confirmation")'
   '';
 in {
   programs.emacs = {
