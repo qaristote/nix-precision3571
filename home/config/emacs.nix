@@ -9,12 +9,14 @@ let
 in {
   programs.emacs = {
     enable = true;
-    # package = pkgs.emacs.overrideAttrs (oldAttrs: rec { nativeComp = true; });
+    package = pkgs.emacsWithPackages (ep: with ep; [ emacsql-sqlite emacsql-sqlite3 ]);
   };
   services.emacs = {
     enable = true;
     client.enable = true;
   };
+
+  home.packages = with pkgs; [ gnutar ];
 
   home.file.".spacemacs.d/init.el".source = ./dotfiles/spacemacs;
 
