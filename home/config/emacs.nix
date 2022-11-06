@@ -5,6 +5,7 @@ let
   spacemacs-update-script = pkgs.writeShellScript "spacemacs-update" ''
     ${pkgs.git}/bin/git pull
     ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages "no-confirmation")'
+    ${cfg.package}/bin/emacsclient --eval '(spacemacs/restart-emacs-resume-layout)'
   '';
 in {
   programs.emacs = {
