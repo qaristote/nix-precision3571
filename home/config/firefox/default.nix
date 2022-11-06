@@ -10,7 +10,6 @@ let
   config-template =
     builtins.readFile "${pkgs.personal.firefoxPackages.arkenfox-userjs}";
   config-default = config-template + mkUserJs {
-    "browser.shell.checkDefaultBrowser" = true; # 0101
     "keyword.enabled" = true; # 0801
     "signon.rememberSignons" = false; # 0901
     "security.nocertdb" = true; # 1222
@@ -18,7 +17,6 @@ let
     "media.peerconnection.ice.no_host" = true; # 2004
     "dom.allow_cut_copy" = true; # 2404
     "dom.battery.enabled" = false; # 2502
-    "dom.vr.enabled" = false; # 2520
     "permissions.default.xr" = 2; # 2521
     "privacy.clearOnShutdown.siteSettings" = true; # 2811
 
