@@ -22,11 +22,10 @@
   nixpkgs.config = { allowUnfree = true; };
 
   nix = {
-    # package = pkgs.nixUnstable;
-    # extraOptions = ''
-    # experimental-features = nix-command flakes
-    # '';
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
     gc = {
       automatic = true;
       dates = "daily";
@@ -37,7 +36,8 @@
     enable = true;
     flags = [ "--upgrade-all" ];
   };
-  systemd.services.nix-gc.after = lib.mkIf config.system.autoUpgrade.enable [ "nixos-upgrade.service" ];
+  systemd.services.nix-gc.after =
+    lib.mkIf config.system.autoUpgrade.enable [ "nixos-upgrade.service" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
