@@ -10,7 +10,6 @@
     ./git.nix
     ./i3
     ./kdeconnect.nix
-    ./picom.nix
     ./redshift.nix
     ./rofi.nix
     ./syncthing.nix
