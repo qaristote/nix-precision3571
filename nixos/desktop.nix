@@ -29,7 +29,11 @@ in {
   # Enable X server
   services.xserver = {
     enable = true;
-    desktopManager.xfce.enable = true;
+    desktopManager.xfce = {
+      enable = true;
+      noDesktop = true;
+      enableXfwm = false;
+    };
     windowManager.i3.enable = true;
     displayManager = {
       lightdm = {
@@ -37,6 +41,9 @@ in {
         background = background-image;
         greeters.gtk = {
           enable = true;
+          extraConfig = ''
+            user-background = false
+          '';
           theme = {
             name = "Arc-Dark";
             package = pkgs.arc-theme;
