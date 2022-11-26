@@ -10,10 +10,14 @@
     config = rec {
       assigns = {
         "8: media" = [{ class = "^Steam$"; }];
-        "9: social" = [ { class = "^Thunderbird$"; } { class = "^Signal$"; } ];
+        "9: social" = [
+          { class = "^Mail$"; }
+          { class = "^thunderbird$"; }
+          { class = "^Signal$"; }
+        ];
       };
 
-     window.border = 0;
+      window.border = 0;
       gaps = {
         inner = 15;
         outer = 5;
