@@ -55,10 +55,11 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; Programming (and markup) languages
      ;; ----------------------------------------------------------------
+     lsp-mode
      csv
      emacs-lisp spacemacs-misc
      go
-     (haskell :variables haskell-enable-hindent-style "fundamental")
+     haskell
      html javascript
      latex
      markdown
