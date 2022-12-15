@@ -77,9 +77,6 @@ This function should only modify configuration layer settings."
      why3
    )
 
-   ;; disable auto-update of packages on startup
-   configuration-layer--package-archives-refreshed t
-
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
    ;; loaded using load/require/use-package in the user-config section below in
