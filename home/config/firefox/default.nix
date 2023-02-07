@@ -54,18 +54,19 @@ let
     visibility: collapse;
     }
   '';
+  extensions = attrValues pkgs.personal.firefoxPackages.addons;
 
 in {
   programs.firefox = {
     enable = true;
 
-    extensions = attrValues pkgs.personal.firefoxPackages.addons;
     # to add :
     # floccus + LoFloccus
     # Zotero
 
     profiles = {
       default = {
+        inherit extensions;
         id = 0; # isDefault = true
 
         extraConfig = config-default;
@@ -74,6 +75,7 @@ in {
 
       # For video streaming
       streaming = {
+        inherit extensions;
         id = 1;
 
         extraConfig = config-default + mkUserJs {
@@ -94,6 +96,7 @@ in {
       };
 
       videoconferencing = {
+        inherit extensions;
         id = 2;
 
         extraConfig = config-default + mkUserJs {
