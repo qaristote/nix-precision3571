@@ -43,7 +43,6 @@ This function should only modify configuration layer settings."
      ;; eww
      git
      helm
-     ;; lsp
      multiple-cursors
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -55,7 +54,7 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      ;; Programming (and markup) languages
      ;; ----------------------------------------------------------------
-     lsp-mode
+     lsp
      csv
      emacs-lisp spacemacs-misc
      go
@@ -385,8 +384,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
-   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
-   ;; borderless fullscreen. (default nil)
+   ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
+   ;; without external boxes. Also disables the internal border. (default nil)
    dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
@@ -398,6 +397,11 @@ It should only modify the values of Spacemacs settings."
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
    dotspacemacs-inactive-transparency 90
+
+   ;; A value from the range (0..100), in increasing opacity, which describes the
+   ;; transparency level of a frame background when it's active or selected. Transparency
+   ;; can be toggled through `toggle-background-transparency'. (default 90)
+   dotspacemacs-background-transparency 90
 
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
@@ -616,6 +620,10 @@ before packages are loaded."
     (ediff-files "~/code/nix/latitude-7490/home/config/dotfiles/spacemacs"
                  (concat dotspacemacs-template-directory ".spacemacs.template")))
   (spacemacs/set-leader-keys "feD" 'my-ediff-dotfile-and-template)
+  (defun my-open-dotfile ()
+    (interactive)
+    (find-file "~/code/nix/latitude-7490/home/config/dotfiles/spacemacs"))
+  (spacemacs/set-leader-keys "fed" 'my-open-dotfile)
 
   (spacemacs/set-leader-keys-for-major-mode 'magit-mode "b" 'magit-branch)
 )
