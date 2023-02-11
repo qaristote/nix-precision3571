@@ -1,20 +1,16 @@
-{ config, lib, ... }:
+{ home, home-manager, ... }:
 
-let cfg = config.users.users;
-in {
-  users.users.qaristote = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel" # Enable ‘sudo’ for the user.
-      "audio"
-      "networkmanager"
-      "docker"
-    ];
+{
+  imports = [ home-manager.nixosModules.home-manager ];
+
+  personal.user = {
+    enable = true;
+    name = "qaristote";
   };
 
   home-manager = {
-    users.qaristote = (import (/home/qaristote/.config/nixpkgs));
+    users.qaristote = home.qaristote;
     useGlobalPkgs = false;
-    useUserPackages = true; # to enable fontconfig inside home-manager
+    useUserPackages = true;
   };
 }

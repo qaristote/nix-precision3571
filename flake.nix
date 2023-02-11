@@ -1,11 +1,20 @@
 {
   inputs = {
-    my-nixpkgs = "git+file:///home/qaristote/code/nix/my-nixpkgs";
+    my-nixpkgs.url = "git+file:///home/qaristote/code/nix/my-nixpkgs";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    home-manager.url = "github:nix-community/home-manager";
   };
-  outputs = { self, nixpkgs }: {
+
+  outputs = { self, nixpkgs, my-nixpkgs, nixos-hardware, home-manager }:
+    let system = "x86_64-linux"; in {
     nixosConfigurations.latitude-7490 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [ ./nixos/configuration.nix ];
+      inherit system;
+      specialArgs = { inherit nixos-hardware home-manager; home.qaristote = import ./home; };
+      modules = [ my-nixpkgs.nixosModules.personal ./nixos ];
+    };
+    homeConfigurations.qaristote = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."${system}";
+      modules = [ ./home ];
     };
   };
 }
