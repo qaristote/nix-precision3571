@@ -18,6 +18,10 @@
       before = lib.mkIf config.nix.gc.automatic [ "nix-gc.service" ];
       wantedBy = lib.mkIf config.nix.gc.automatic [ "nix-gc.service" ];
     };
+
+    nixos-upgrade.unitConfig = {
+      CPUWeight = 1;
+    };
   };
 
   # virtualisation.docker.enable = true;
