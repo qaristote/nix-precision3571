@@ -1,8 +1,6 @@
 {
   inputs = {
     my-nixpkgs.url = "git+file:///home/qaristote/code/nix/my-nixpkgs";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    home-manager.url = "github:nix-community/home-manager";
   };
 
   outputs = { self, nixpkgs, my-nixpkgs, nixos-hardware, home-manager }:
