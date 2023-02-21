@@ -1,4 +1,4 @@
-{ home, home-manager, ... }:
+{ home-manager, homeModules, ... }:
 
 {
   imports = [ home-manager.nixosModules.home-manager ];
@@ -9,8 +9,8 @@
   };
 
   home-manager = {
-    users.qaristote = home.qaristote;
-    useGlobalPkgs = false;
+    users.qaristote = { ... }: { imports = homeModules; };
+    useGlobalPkgs = true;
     useUserPackages = true;
   };
 }
