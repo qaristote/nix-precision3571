@@ -9,7 +9,7 @@
       overlays-module = { ... }: {
         nixpkgs.overlays = [ my-nixpkgs.overlays.personal ];
       };
-      homeModules = [ overlays-module my-nixpkgs.homeModules.personal ./home ];
+      homeModules = [ my-nixpkgs.homeModules.personal ./home ];
       nixosModules =
         [ overlays-module my-nixpkgs.nixosModules.personal ./nixos ];
     in {

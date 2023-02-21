@@ -1,3 +1,0 @@
-netflix https://www.vectorlogo.zone/logos/netflix/netflix-icon.svg
-mubi https://mubi.com/logo
-deezer https://raw.githubusercontent.com/edent/SuperTinyIcons/master/images/svg/deezer.svg

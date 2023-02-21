@@ -1,16 +1,11 @@
-{ home-manager, homeModules, ... }:
+{ config, ... }:
 
 {
-  imports = [ home-manager.nixosModules.home-manager ];
-
   personal.user = {
     enable = true;
     name = "qaristote";
+    homeManager.enable = true;
   };
 
-  home-manager = {
-    users.qaristote = { ... }: { imports = homeModules; };
-    useGlobalPkgs = true;
-    useUserPackages = true;
-  };
+  home-manager.extraSpecialArgs.osConfig = config;
 }

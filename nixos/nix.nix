@@ -10,8 +10,7 @@
 
   system.autoUpgrade.flags =
     let update-input = input: [ "--update-input" input ];
-    in update-input "home-manager" ++ update-input "nixos-hardware"
-    ++ [ "--impure" ];
+    in update-input "home-manager" ++ update-input "nixos-hardware";
 
   # make auto-upgrade service lightweight
   systemd.services.nixos-upgrade.unitConfig = { CPUWeight = 1; };
