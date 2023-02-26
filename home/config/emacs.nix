@@ -2,10 +2,20 @@
 
 let
   cfg = config.programs.emacs;
-  spacemacs-update-script = pkgs.writeShellScript "spacemacs-update" ''
-    ${pkgs.git}/bin/git pull
-    ${cfg.package}/bin/emacsclient --eval '(configuration-layer/update-packages "no-confirmation")'
-  '';
+  spacemacs-update-script = pkgs.callPackage ({ emacs, git }:
+    pkgs.writeShellApplication {
+      name = "spacemacs-update";
+
+      runtimeInputs = [ emacs git ];
+
+      text = ''
+        git checkout develop
+        git pull
+        git checkout local
+        git merge develop
+        emacsclient --eval '(configuration-layer/update-packages "no-confirmation")'
+      '';
+    }) { emacs = cfg.package; };
 in {
   programs.emacs = {
     enable = true;
@@ -36,8 +46,6 @@ in {
         Persistent = true;
         OnCalendar = "daily";
       };
-      Install = {
-        WantedBy = [ "default.target" ];
-      };
+      Install = { WantedBy = [ "default.target" ]; };
     });
 }
