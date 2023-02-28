@@ -4,13 +4,13 @@
   personal.nix = {
     enable = true;
     autoUpgrade = true;
-    flake = "git+file:///home/qaristote/code/nix/machines/latitude-7490";
+    flake = "git+file:///etc/nixos";
     gc.enable = true;
   };
 
   system.autoUpgrade.flags =
     let update-input = input: [ "--update-input" input ];
-    in update-input "home-manager" ++ update-input "nixos-hardware";
+    in update-input "latitude-7490/nixpkgs" ++ update-input "latitude-7490/home-manager" ++ update-input "latitude-7490/nixos-hardware";
 
   # make auto-upgrade service lightweight
   systemd.services.nixos-upgrade.unitConfig = { CPUWeight = 1; };
