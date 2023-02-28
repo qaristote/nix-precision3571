@@ -10,7 +10,7 @@ in {
 
   services.xserver = {
     displayManager.lightdm = {
-      background = background-image;
+      # background = background-image;
       greeters.gtk = {
         extraConfig = ''
           user-background = false
