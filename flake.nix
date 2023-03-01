@@ -1,9 +1,10 @@
 {
   inputs = {
     my-nixpkgs.url = "git+file:///home/qaristote/code/nix/my-nixpkgs";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, my-nixpkgs, nixos-hardware, home-manager }:
+  outputs = { self, nixpkgs, my-nixpkgs, nixos-hardware, home-manager, stylix }:
     let
       system = "x86_64-linux";
       overlays-module = { ... }: {
@@ -15,7 +16,7 @@
     in {
       nixosConfigurations.latitude-7490 = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit nixos-hardware home-manager homeModules; };
+        specialArgs = { inherit nixos-hardware home-manager homeModules stylix; };
         modules = nixosModules;
       };
 

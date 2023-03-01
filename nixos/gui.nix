@@ -6,6 +6,7 @@ in {
     enable = true;
     xserver.enable = true;
     i3.enable = true;
+    stylix.enable = true;
   };
 
   services.xserver = {
