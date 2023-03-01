@@ -40,16 +40,13 @@
       },
       "locked": {
         "lastModified": 1677675864,
-        "narHash": "sha256-8Bz+Wd/e/oSDJ7OIYGt0/6nINXsj2/2PbrN5ZhOPa0k=",
-        "owner": "qaristote",
-        "repo": "my-nixpkgs",
-        "rev": "857b17aa02062cc3e036e4049e37c11eb1a7e707",
-        "type": "github"
+        "narHash": "sha256-U1clIpa9CnhMMUZCVesoo25Sb33dksYO+qAmBxmWWzg=",
+        "type": "git",
+        "url": "file:///home/qaristote/code/nix/my-nixpkgs"
       },
       "original": {
-        "owner": "qaristote",
-        "repo": "my-nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/qaristote/code/nix/my-nixpkgs"
       }
     },
     "nixos-hardware": {
