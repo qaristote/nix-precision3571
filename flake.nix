@@ -1,6 +1,6 @@
 {
   inputs = {
-    my-nixpkgs.url = "git+file:///home/qaristote/code/nix/my-nixpkgs";
+    my-nixpkgs.url = "github:qaristote/my-nixpkgs";
     stylix.url = "github:danth/stylix";
   };
 
