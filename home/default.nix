@@ -5,14 +5,12 @@
     profiles = {
       dev = true;
       multimedia = true;
-      social = {
-        enable = true;
-        identities = {
-          personal = true;
-          work = true;
-        };
-      };
+      social = true;
       syncing = true;
+    };
+    identities = {
+      personal = true;
+      work = true;
     };
   };
 

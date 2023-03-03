@@ -79,11 +79,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1677754722,
-        "narHash": "sha256-97QITGsPdZTPzaYXmuW0Z88QASFnoXGmrvkZXPP35YA=",
+        "lastModified": 1677783711,
+        "narHash": "sha256-eq5mOVk3gv5HITtLhPjKwi8bFnOaQplA3X0WFgHnmxE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "db1c22626ad1058834f043eae7d80bbf2a8e1532",
+        "rev": "b9e3a29864798d55ec1d6579ab97876bb1ee9664",
         "type": "github"
       },
       "original": {
@@ -120,17 +120,17 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1677699041,
-        "narHash": "sha256-qyK7VrOAaa5gJdiCXluSJFZUn7CkVPKW5022jaJJWb8=",
-        "ref": "refs/heads/master",
-        "rev": "a0cb261eda73c4771756120d03b6d754c7fe43f7",
-        "revCount": 24,
-        "type": "git",
-        "url": "file:///home/qaristote/code/nix/my-nixpkgs"
+        "lastModified": 1677860668,
+        "narHash": "sha256-7OfSgEI9N6sQ2IPgvD7lX+SQY00wnhJxBJBfunFy9d4=",
+        "owner": "qaristote",
+        "repo": "my-nixpkgs",
+        "rev": "fdaf97a9acfbec43cc816357b73c0e746621c531",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/qaristote/code/nix/my-nixpkgs"
+        "owner": "qaristote",
+        "repo": "my-nixpkgs",
+        "type": "github"
       }
     },
     "nixos-hardware": {
