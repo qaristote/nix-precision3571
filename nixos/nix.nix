@@ -15,7 +15,4 @@
     "latitude-7490/nixpkgs"
     "latitude-7490/stylix"
   ];
-
-  # make auto-upgrade service lightweight
-  systemd.services.nixos-upgrade.unitConfig = { CPUWeight = 1; };
 }
