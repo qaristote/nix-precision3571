@@ -120,11 +120,11 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1677941599,
-        "narHash": "sha256-08EiGReGxoCqX2vwfp2v4FTMAWNHMdf1wQetTOJG+Gk=",
+        "lastModified": 1677943065,
+        "narHash": "sha256-XiGfYH75Dn0BT5x5KVsYh2mNs3tC6YEX2r9JRpKdUiw=",
         "owner": "qaristote",
         "repo": "my-nixpkgs",
-        "rev": "b480f68e0bcf552842988d63c694c52bd227eb1b",
+        "rev": "bf1d92ae0929aa541673880a616f5f9c3d05cf69",
         "type": "github"
       },
       "original": {
