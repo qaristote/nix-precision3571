@@ -9,10 +9,10 @@
   };
 
   system.autoUpgrade.flags = pkgs.personal.lib.updateInputFlags [
-    "latitude-7490/home-manager"
-    "latitude-7490/my-nixpkgs"
-    "latitude-7490/nixos-hardware"
-    "latitude-7490/nixpkgs"
-    "latitude-7490/stylix"
+    "latitude-7280/home-manager"
+    "latitude-7280/my-nixpkgs"
+    "latitude-7280/nixos-hardware"
+    "latitude-7280/nixpkgs"
+    "latitude-7280/stylix"
   ];
 }
