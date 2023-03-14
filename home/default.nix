@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, osConfig, ... }:
 
 {
   personal = {
@@ -18,5 +18,5 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = lib.optional config.programs.starship.enable pkgs.nerdfonts;
+  home.packages = lib.optional osConfig.programs.starship.enable pkgs.nerdfonts;
 }
