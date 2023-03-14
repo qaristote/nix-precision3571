@@ -586,6 +586,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; Variables customization
   (custom-set-variables
+   ;; tuareg
    '(merlin-command "ocamlmerlin")
 
    ;; reftex
@@ -594,11 +595,15 @@ before packages are loaded."
                                     "nobibliography"
                                     "addbibresource"))
 
+   ;; compiling packages
    ;; don't pop warning buffer on native comp
    '(native-comp-async-report-warnings-errors 'silent)
 
    ;; restrict which warnings are shown
    '(warning-minimum-level :emergency)
+
+   ;; org-roam
+   '(org-roam-directory (file-truename "~/documents/notes/src"))
    )
 
   ;; auto-completion
@@ -606,6 +611,7 @@ before packages are loaded."
 
   ;; hooks
   (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+  (org-roam-db-autosync-mode)
 
   ;; Key bindings
   (defun my-ediff-dotfile-and-template ()
