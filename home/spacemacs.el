@@ -62,7 +62,7 @@ This function should only modify configuration layer settings."
      nixos
      (org :variables
           org-enable-roam-support t
-          ;; org-enable-roam-ui t
+          org-enable-roam-ui t
           )
      ocaml coq
      yaml
