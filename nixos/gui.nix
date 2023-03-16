@@ -16,5 +16,6 @@
         '';
       };
     };
+    libinput.mouse.dev = "/dev/input/mouse0";
   };
 }

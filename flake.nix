@@ -14,7 +14,7 @@
       nixosModules =
         [ overlays-module my-nixpkgs.nixosModules.personal ./nixos ];
     in {
-      nixosConfigurations.latitude-7280 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.precision-3571 = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit nixos-hardware home-manager homeModules stylix; };
         modules = nixosModules;

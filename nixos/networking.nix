@@ -12,11 +12,11 @@
   };
 
   networking = {
-    hostName = "latitude-7280";
+    hostName = "precision-3571";
 
     interfaces = {
       enp0s31f6.useDHCP = true;
-      wlp2s0.useDHCP = true;
+      wlp0s20f3.useDHCP = true;
     };
   };
 }
