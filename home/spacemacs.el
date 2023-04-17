@@ -604,6 +604,9 @@ before packages are loaded."
 
    ;; org-roam
    '(org-roam-directory (file-truename "~/documents/notes/src"))
+
+   ;; don't overflow text horizontally
+   '(truncate-lines nil)
    )
 
   ;; auto-completion
