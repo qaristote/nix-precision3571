@@ -53,15 +53,14 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
-        "utils": "utils"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1680000368,
-        "narHash": "sha256-TlgC4IJ7aotynUdkGRtaAVxquaiddO38Ws89nB7VGY8=",
+        "lastModified": 1681688069,
+        "narHash": "sha256-1w6zBfwxwMbyewUyqzSnZs8nwNqj6ZBVcP0rkCueyIo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "765e4007b6f9f111469a25d1df6540e8e0ca73a6",
+        "rev": "68eaf4b577cfa8024fb910a1ce7d60385044f798",
         "type": "github"
       },
       "original": {
@@ -75,7 +74,7 @@
           "stylix",
           "nixpkgs"
         ],
-        "utils": "utils_2"
+        "utils": "utils"
       },
       "locked": {
         "lastModified": 1680000368,
@@ -98,11 +97,11 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1680092667,
-        "narHash": "sha256-Gori3PTCiXFu0x+7PGp7kyEU4tPW6Ks92QS7+nXfvRo=",
+        "lastModified": 1680466509,
+        "narHash": "sha256-Sv22irXUUdbuaSuhXOElf7D62jE4kYiuD6rknJ3pQIc=",
         "owner": "qaristote",
         "repo": "my-nixpkgs",
-        "rev": "b94ddb1f9420240780054e60fa3acb6552ca3a82",
+        "rev": "19627b26f605d5ebc765084e051f64932e02fca4",
         "type": "github"
       },
       "original": {
@@ -113,11 +112,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1680070330,
-        "narHash": "sha256-aoT2YZCd9LEtiEULFLIF0ykKydgE72X8gw/k9/pRS5I=",
+        "lastModified": 1680876084,
+        "narHash": "sha256-eP9yxP0wc7XuVaODugh+ajgbFGaile2O1ihxiLxOuvU=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "a6aa8174fa61e55bd7e62d35464d3092aefe0421",
+        "rev": "3006d2860a6ed5e01b0c3e7ffb730e9b293116e2",
         "type": "github"
       },
       "original": {
@@ -127,11 +126,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1677932085,
-        "narHash": "sha256-+AB4dYllWig8iO6vAiGGYl0NEgmMgGHpy9gzWJ3322g=",
+        "lastModified": 1681465517,
+        "narHash": "sha256-EasJh15/jcJNAHtq2SGbiADRXteURAnQbj1NqBoKkzU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3c5319ad3aa51551182ac82ea17ab1c6b0f0df89",
+        "rev": "abe7316dd51a313ce528972b104f4f04f56eefc4",
         "type": "github"
       },
       "original": {
@@ -157,11 +156,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1680030621,
-        "narHash": "sha256-qQa1NeS5Rvk2lgK5lSk986PC6I72yIHejzM8PFu+dHs=",
+        "lastModified": 1681693905,
+        "narHash": "sha256-XdXMvCt+i2ZcmAIPZvu3RUwcdaC9OX7d1WMAJJokzeA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "402cc3633cc60dfc50378197305c984518b30773",
+        "rev": "db34d7561caa508ece0265a56f382c5d3b7a6c1b",
         "type": "github"
       },
       "original": {
@@ -216,11 +215,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1680076293,
-        "narHash": "sha256-2/b1c7stbOi37zecH47sQqSkmDCHneAGBPbHYbAVFVs=",
+        "lastModified": 1681481742,
+        "narHash": "sha256-VIc2fV6P3o4b+C+qFji7YfUZVZE/LtBDOR+TJujBr/4=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "d0658ebb8bf2c1f74e77d2043e1c5d5bee0efbf4",
+        "rev": "c80d054fd4b62a4e8e1accf9c22b2e622737aadd",
         "type": "github"
       },
       "original": {
@@ -230,21 +229,6 @@
       }
     },
     "utils": {
-      "locked": {
-        "lastModified": 1676283394,
-        "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "3db36a8b464d0c4532ba1c7dda728f4576d6d073",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_2": {
       "locked": {
         "lastModified": 1676283394,
         "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
