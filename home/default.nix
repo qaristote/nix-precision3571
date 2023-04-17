@@ -18,6 +18,5 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = lib.optional osConfig.programs.starship.enable pkgs.nerdfonts ++ [ pkgs.evince ];
-  home.shellAliases.VIEWER = "evince";
+  home.packages = lib.optional osConfig.programs.starship.enable pkgs.nerdfonts;
 }
