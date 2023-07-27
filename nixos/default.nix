@@ -12,6 +12,7 @@
     ./hardware
     ./nix.nix
     ./networking.nix
+    ./printing.nix
     ./users.nix
   ];
 
