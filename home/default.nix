@@ -12,7 +12,27 @@
     };
   };
 
-  accounts.email.accounts.work.primary = true;
+  accounts.email.accounts = {
+    work.primary = true;
+    university = {
+      address = "quentin.aristote@etu.u-paris.fr";
+      userName = "quentin.aristote@etu.u-paris.fr";
+      realName = "Quentin Aristote";
+      imap = {
+        host = "outlook.office365.com";
+        port = 993;
+      };
+      smtp = {
+        host = "smtp.office365.com";
+        port = 587;
+        tls.useStartTls = true;
+      };
+      thunderbird = {
+        enable = true;
+        profiles = [ "default" ];
+      };
+    };
+  };
 
   home.file.".spacemacs.d/init.el".source = ./spacemacs.el;
 
