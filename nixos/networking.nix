@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{...}: {
   personal.networking = {
     enable = true;
     bluetooth.enable = true;
@@ -13,6 +11,11 @@
 
   networking = {
     hostName = "precision-3571";
+    hosts = {
+      "10.3.141.1" = ["raspberrypi.local"];
+      "192.168.1.10" = ["dionysos.local"];
+      "192.168.1.2" = ["kerberos.local"];
+    };
 
     interfaces = {
       enp0s31f6.useDHCP = true;
@@ -20,8 +23,13 @@
     };
   };
 
-  environment.etc."ssl/certs/ens.pem".source = pkgs.fetchurl {
-    url = "https://www.tuteurs.ens.fr/internet/USERTrust_RSA_Certification_Authority.pem";
-    sha256 = "sha256:ij28uSqxxid2R/4quFNrXJgqu/2x8d9XKOAbkGq6lTo=";
+  # NAT
+  boot.kernel.sysctl = {"net.ipv4.ip_forward" = 1;};
+  networking = {
+    nat = {
+      enable = true;
+      internalInterfaces = ["ve-+"];
+      externalInterface = "wlp2s0";
+    };
   };
 }

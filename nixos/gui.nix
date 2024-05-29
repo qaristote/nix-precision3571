@@ -1,6 +1,4 @@
-{ config, pkgs, nixpkgs, ... }:
-
-{
+{...}: {
   personal.gui = {
     enable = true;
     xserver.enable = true;
@@ -8,8 +6,8 @@
     stylix.enable = true;
   };
 
-  services.xserver = {
-    displayManager.lightdm = {
+  services = {
+    xserver.displayManager.lightdm = {
       greeters.gtk = {
         extraConfig = ''
           user-background = false

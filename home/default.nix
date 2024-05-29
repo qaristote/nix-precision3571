@@ -1,42 +1,18 @@
-{ config, lib, pkgs, osConfig, ... }:
-
-{
+{pkgs, ...}: {
   personal = {
     profiles = {
       dev = true;
+      multimedia = true;
       social = true;
       syncing = true;
     };
     identities = {
+      personal = true;
       work = true;
     };
   };
 
-  accounts.email.accounts = {
-    work.primary = true;
-    university = {
-      address = "quentin.aristote@etu.u-paris.fr";
-      userName = "quentin.aristote@etu.u-paris.fr";
-      realName = "Quentin Aristote";
-      imap = {
-        host = "outlook.office365.com";
-        port = 993;
-      };
-      smtp = {
-        host = "smtp.office365.com";
-        port = 587;
-        tls.useStartTls = true;
-      };
-      thunderbird = {
-        enable = true;
-        profiles = [ "default" ];
-      };
-    };
-  };
+  accounts.email.accounts.personal.primary = true;
 
-  home.file.".spacemacs.d/init.el".source = ./spacemacs.el;
-
-  fonts.fontconfig.enable = true;
-
-  home.packages = lib.optional osConfig.programs.starship.enable pkgs.nerdfonts;
+  home.packages = [pkgs.screen];
 }

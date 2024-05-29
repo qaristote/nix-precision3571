@@ -4,25 +4,30 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, my-nixpkgs, nixos-hardware, home-manager, stylix }:
-    let
-      system = "x86_64-linux";
-      overlays-module = { ... }: {
-        nixpkgs.overlays = [ my-nixpkgs.overlays.personal ];
-      };
-      homeModules = [ my-nixpkgs.homeModules.personal ./home ];
-      nixosModules =
-        [ overlays-module my-nixpkgs.nixosModules.personal ./nixos ];
-    in {
-      nixosConfigurations.precision-3571 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit nixos-hardware home-manager homeModules stylix; };
-        modules = nixosModules;
-      };
-
-      homeConfigurations.qaristote = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages."${system}";
-        modules = homeModules;
-      };
+  outputs = {
+    nixpkgs,
+    my-nixpkgs,
+    nixos-hardware,
+    home-manager,
+    stylix,
+    ...
+  }: let
+    system = "x86_64-linux";
+    overlays-module = {...}: {
+      nixpkgs.overlays = [my-nixpkgs.overlays.personal];
     };
+    homeModules = [my-nixpkgs.homeModules.personal ./home];
+    nixosModules = [overlays-module my-nixpkgs.nixosModules.personal ./nixos];
+  in {
+    nixosConfigurations.precision-3571 = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {inherit nixos-hardware home-manager homeModules stylix;};
+      modules = nixosModules;
+    };
+
+    homeConfigurations.qaristote = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages."${system}";
+      modules = homeModules;
+    };
+  };
 }
