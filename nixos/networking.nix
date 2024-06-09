@@ -29,7 +29,7 @@
     nat = {
       enable = true;
       internalInterfaces = ["ve-+"];
-      externalInterface = "wlp2s0";
+      externalInterface = "wlp0s20f3";
     };
   };
 }
