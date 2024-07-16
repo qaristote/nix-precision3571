@@ -225,11 +225,11 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1721118309,
-        "narHash": "sha256-n6ZKGWim9YsG7qPkF+U9QKuuZgILI3cyQHSeJmu/Is4=",
+        "lastModified": 1721118444,
+        "narHash": "sha256-X3d5DpuXMEr54coQVGgyfkAaBuF80s5jPCMaYtCqH5M=",
         "owner": "qaristote",
         "repo": "my-nixpkgs",
-        "rev": "3a295a60b8d945210652d6095b4db64fa84496a0",
+        "rev": "486de79d1dd3829d527f458175296a9993185fd6",
         "type": "github"
       },
       "original": {
