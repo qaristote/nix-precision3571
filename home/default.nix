@@ -14,5 +14,10 @@
 
   accounts.email.accounts.personal.primary = true;
 
-  home.packages = [pkgs.screen];
+  programs.bash.bashrcExtra = ''
+    function screen (){
+      echo -ne "\033]0;screen $@\a"
+      sudo ${pkgs.screen}/bin/screen $@
+    }
+  '';
 }
