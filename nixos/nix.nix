@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   personal.nix = {
     enable = true;
     autoUpgrade = {
@@ -16,7 +16,7 @@
   };
 
   systemd.services.flake-update = {
-    preStart = ''
+    preStart = lib.mkAfter ''
       pushd /home/qaristote/code/nix/machines/precision-3571
       git status
       popd
