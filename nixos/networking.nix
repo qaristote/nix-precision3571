@@ -12,9 +12,10 @@
   networking = {
     hostName = "precision-3571";
     hosts = {
-      "10.3.141.1" = ["raspberrypi.local"];
-      "192.168.1.10" = ["dionysos.local"];
       "192.168.1.2" = ["kerberos.local"];
+      "192.168.2.1" = ["kerberos.local"];
+      "192.168.2.2" = ["hephaistos.local"];
+      "192.168.4.10" = ["steam-deck.local"];
     };
 
     interfaces = {
