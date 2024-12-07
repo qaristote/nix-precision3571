@@ -1,7 +1,6 @@
-{ nixos-hardware, ... }:
-
-{
-  imports = [ # Include the results of the hardware scan.
+{nixos-hardware, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
     # Community-curated hardware configuration
@@ -21,5 +20,7 @@
     };
     sound.enable = true;
   };
-}
 
+  # these modules seem to be preventing hibernation
+  boot.blacklistedKernelModules = ["intel_hid" "nouveau"];
+}
