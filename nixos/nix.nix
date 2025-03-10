@@ -13,6 +13,15 @@
     };
     flake = "git+file:///etc/nixos";
     gc.enable = true;
+    remoteBuilds = {
+      enable = true;
+      machines.hephaistos = {
+        enable = true;
+        domain = "local";
+        speedFactor = 1;
+        require = false;
+      };
+    };
   };
 
   systemd.services.flake-update = {
