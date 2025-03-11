@@ -6,6 +6,7 @@
       autoUpdateInputs = [
         "precision-3571/home-manager"
         "precision-3571/my-nixpkgs"
+        "precision-3571/my-nixpkgs/nur"
         "precision-3571/nixos-hardware"
         "precision-3571/nixpkgs"
         "precision-3571/stylix"
@@ -14,7 +15,7 @@
     flake = "git+file:///etc/nixos";
     gc.enable = true;
     remoteBuilds = {
-      enable = true;
+      # enable = true;
       machines.hephaistos = {
         enable = true;
         domain = "local";
