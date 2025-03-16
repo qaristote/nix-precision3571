@@ -14,7 +14,7 @@
     flake = "git+file:///etc/nixos";
     gc.enable = true;
     remoteBuilds = {
-      # enable = true;
+      enable = true;
       machines.hephaistos = {
         enable = true;
         domain = "local";
