@@ -14,6 +14,8 @@
 
   accounts.email.accounts.personal.primary = true;
 
+  stylix.targets.firefox.profileNames = ["default"];
+
   programs = {
     bash.bashrcExtra = ''
       function screen (){
