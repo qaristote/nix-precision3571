@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   personal = {
     profiles = {
       dev = true;
@@ -25,15 +21,5 @@
         sudo ${pkgs.screen}/bin/screen $@
       }
     '';
-
-    # necessary because the hephaistos remote builder sets
-    # nixremote as default ssh user
-    ssh = {
-      enable = true;
-      matchBlocks."hephaistos.local" = {
-        user = config.home.username;
-        extraOptions.IdentitiesOnly = "no";
-      };
-    };
   };
 }
