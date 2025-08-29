@@ -14,7 +14,10 @@
 
   accounts.email.accounts.personal.primary = true;
 
-  stylix.targets.firefox.profileNames = ["default"];
+  personal.x.i3.devices = {
+    wifi = "wlp0s20f3";
+    eth = "enp0s31f6";
+  };
 
   programs = {
     bash.bashrcExtra = ''
