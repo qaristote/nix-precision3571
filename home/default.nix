@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ lib, pkgs, ... }:
+{
   personal = {
     profiles = {
       dev = true;
@@ -26,5 +27,11 @@
         sudo ${pkgs.screen}/bin/screen $@
       }
     '';
+
+    ssh.matchBlocks."git.aristote.fr" = {
+      host = "git.aristote.fr";
+      hostname = lib.mkForce "hephaistos.local";
+      proxyJump = lib.mkForce null;
+    };
   };
 }
