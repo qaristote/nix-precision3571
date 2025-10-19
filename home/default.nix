@@ -28,10 +28,16 @@
       }
     '';
 
-    ssh.matchBlocks."git.aristote.fr" = {
-      host = "git.aristote.fr";
-      hostname = lib.mkForce "hephaistos.local";
-      proxyJump = lib.mkForce null;
+    ssh.matchBlocks = {
+      "git.aristote.fr" = {
+        hostname = lib.mkForce "hephaistos.local";
+        proxyJump = lib.mkForce null;
+      };
+      "ds411.aristote.fr" = {
+        hostname = "ds411.aristote.mesh";
+        user = "quentin";
+        proxyJump = "hermes.aristote.fr";
+      };
     };
   };
 }
