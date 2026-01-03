@@ -36,7 +36,12 @@
       "ds411.aristote.fr" = {
         hostname = "ds411.aristote.mesh";
         user = "quentin";
-        proxyJump = "hermes.aristote.fr";
+        proxyJump = "hephaistos.local";
+      };
+      "ds218.aristote.fr" = {
+        hostname = "ds218.aristote.mesh";
+        user = "quentin";
+        proxyJump = "hephaistos.local";
       };
     };
   };
